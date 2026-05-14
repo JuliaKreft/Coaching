@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Kreft | Inner Clarity & Self-Leadership</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES - BRAND COLORS
+           Abgeleitet aus Logo & LinkedIn Banner
+        ============================================ */
+        :root {
+            /* Brand Gradient Colors */
+            --orange:        #e8924a;
+            --pink:          #e05a8a;
+            --purple:        #8b6bb1;
+            --purple-dark:   #6b4d9e;
+
+            /* Brand Gradient */
+            --gradient-main: linear-gradient(135deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+            --gradient-soft: linear-gradient(135deg, #f0a870 0%, #e87aaa 50%, #a888c8 100%);
+            --gradient-text: linear-gradient(90deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+
+            /* Neutral Colors */
+            --cream:         #f5f0eb;
+            --cream-dark:    #ede7df;
+            --cream-light:   #faf7f4;
+            --navy:          #1e2d4a;
+            --navy-light:    #2d4060;
+            --text-body:     #3a4a5c;
+            --text-muted:    #7a8a9a;
+            --white:         #ffffff;
+            --border:        #e8e0d8;
+
+            /* Typography */
+            --font-heading:  'Playfair Display', Georgia, serif;
+            --font-body:     'Inter', 'Segoe UI', sans-serif;
+
+            /* Spacing */
+            --container:     1200px;
+            --radius:        12px;
+            --radius-lg:     20px;
+        }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream-light);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+        ============================================ */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        /* Divider Line (wie im Logo) */
+        .brand-divider {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .brand-divider::before,
+        .brand-divider::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background: var(--gradient-text);
+        }
+
+        .brand-divider span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+        }
+
+        /* ============================================
+           BUTTONS
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--gradient-main);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(224, 90, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(224, 90, 138, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--navy);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        /* ============================================
+           NAVIGATION / HEADER
+        ============================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 244, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(232, 224, 216, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 4px 30px rgba(30, 45, 74, 0.08);
+        }
+
+        .header-inner {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 16px 40px;
+            max-width: var(--container);
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-placeholder {
+            height: 48px;
+            width: 120px;
+            background: var(--gradient-main);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            opacity: 0.9;
+        }
+
+        .header-name {
+            text-align: center;
+        }
+
+        .header-name h1 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-name span {
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-body);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--pink);
+            background: rgba(224, 90, 138, 0.08);
+        }
+
+        .nav-cta {
+            margin-left: 12px;
+            padding: 10px 24px !important;
+            font-size: 0.82rem !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            margin-left: auto;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           TABS / PAGES
+        ============================================ */
+        .tab-content {
+            display: none;
+            padding-top: 80px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ============================================
+           PAGE 1: HERO
+        ============================================ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: var(--cream-light);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.12) 0%, rgba(224, 90, 138, 0.08) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 107, 177, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 100px 40px 80px;
+            max-width: var(--container);
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-tagline::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gradient-text);
+        }
+
+        .hero-headline {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtext {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--pink);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            animation: fadeInRight 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            box-shadow: 0 8px 40px rgba(30, 45, 74, 0.12);
+            z-index: 2;
+        }
+
+        .hero-badge p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-badge strong {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--navy);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trust-item span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .trust-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--border);
+        }
+
+        /* ============================================
+           PAGE 2: COACHING
+        ============================================ */
+        .coaching-hero {
+            background: var(--cream);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coaching-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .coaching-hero-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coaching-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .coaching-hero p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .italic-quote {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--pink);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .about-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image-frame {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.12);
+        }
+
+        .about-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-accent-box {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--gradient-main);
+            color: var(--white);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(224, 90, 138, 0.3);
+        }
+
+        .about-accent-box strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+        }
+
+        .about-accent-box span {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+        }
+
+        .about-content {
+            padding: 20px 0;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-body);
+            margin-bottom: 20px;
+        }
+
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin-top: 8px;
+        }
+
+        .certification-badge svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .certification-badge span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        .services-section {
+            padding: 80px 0;
+            background: var(--cream-light);
+        }
+
+        .services-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-main);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-color: transparent;
+        }
+
+        .service-card.featured::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured .card-title,
+        .service-card.featured .card-price {
+            color: var(--white);
+        }
+
+        .service-card.featured .card-desc {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .service-card.featured .card-feature {
+            color: rgba(255,255,255,0.8);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+        }
+
+        .service-card.featured .card-icon {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .card-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 8px;
+        }
+
+        .service-card.featured .card-label {
+            color: #f0a870;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .service-card.featured .card-price {
+            background: var(--gradient-soft);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .card-feature {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-feature::before {
+            content: '\2726';
+            font-size: 0.6rem;
+            color: var(--pink);
+            flex-shrink: 0;
+        }
+
+        .service-card.featured .card-feature::before {
+            color: var(--orange);
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testimonials-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(30, 45, 74, 0.08);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--cream);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star {
+            font-size: 1rem;
+            color: var(--orange);
+        }
+
+        .star.empty {
+            color: var(--border);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #2a3540;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .author-info strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-note {
+            background: linear-gradient(135deg, rgba(232,146,74,0.08), rgba(224,90,138,0.08));
+            border: 1px dashed var(--pink);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            text-align: center;
+        }
+
+        /* ============================================
+           PAGE 3: SPEAKING
+        ============================================ */
+        .speaking-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #2d4060 60%, #3a3060 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .speaking-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .speaking-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 107, 177, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .speaking-hero-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaking-hero .section-label {
+            color: var(--orange);
+        }
+
+        .speaking-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 16px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .speaking-hero h2 .highlight-orange {
+            color: var(--orange);
+        }
+
+        .speaking-hero h2 .highlight-pink {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .speaking-hero .subtext {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+        }
+
+        .speaking-about {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .speaking-about-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .career-timeline {
+            margin-top: 32px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 44px;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--pink), transparent);
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(224, 90, 138, 0.3);
+        }
+
+        .timeline-dot span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .timeline-content strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .timeline-content span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .keynotes-section {
+            padding: 80px 0;
+            background: var(--cream-light);
+        }
+
+        .keynote-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .keynote-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.1);
+            border-color: var(--pink);
+        }
+
+        .keynote-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .keynote-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .keynote-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .keynote-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .keynote-tag {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--pink);
+            padding: 4px 12px;
+            background: rgba(224, 90, 138, 0.08);
+            border-radius: 50px;
+        }
+
+        /* ============================================
+           PAGE 4: CONTACT
+        ============================================ */
+        .contact-hero {
+            background: var(--cream);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .contact-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            padding: 60px 0 80px;
+            background: var(--white);
+        }
+
+        .contact-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .calendly-box {
+            background: var(--cream-light);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .calendly-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .calendly-box p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            margin-bottom: 28px;
+        }
+
+        .calendly-btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 1rem !important;
+            padding: 16px 32px !important;
+        }
+
+        .calendly-preview {
+            margin-top: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .calendly-preview p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .contact-info {
+            padding: 8px 0;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-detail:last-of-type {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-text a {
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-text a:hover {
+            color: var(--pink);
+        }
+
+        .contact-form-section {
+            padding: 60px 0 80px;
+            background: var(--cream-light);
+        }
+
+        .form-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 40px rgba(30, 45, 74, 0.06);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--navy);
+            background: var(--cream-light);
+            transition: all 0.3s ease;
+            outline: none;
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--pink);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(224, 90, 138, 0.1);
+        }
+
+        .form-group textarea {
+            height: 140px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            justify-content: center;
+            font-size: 1rem !important;
+            padding: 16px !important;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .site-footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            padding: 48px 0 32px;
+        }
+
+        .footer-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            font-family: var(--font-heading);
+            color: var(--orange);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--pink);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-main);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 24px 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal a {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--pink);
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                gap: 48px;
+                padding: 100px 24px 60px;
+            }
+
+            .about-inner,
+            .speaking-about-inner {
+                gap: 48px;
+                padding: 0 24px;
+            }
+
+            .contact-inner {
+                gap: 48px;
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                grid-template-columns: auto 1fr auto;
+                padding: 14px 20px;
+            }
+
+            .header-name {
+                text-align: left;
+                padding-left: 12px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--cream-light);
+                z-index: 999;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+            }
+
+            .mobile-menu.open {
+                transform: translateX(0);
+            }
+
+            .mobile-menu a {
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: var(--navy);
+                transition: color 0.2s;
+                cursor: pointer;
+            }
+
+            .mobile-menu a:hover {
+                color: var(--pink);
+            }
+
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px;
+                right: 24px;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                font-size: 1.5rem;
+                color: var(--navy);
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 100px 20px 60px;
+                text-align: center;
+            }
+
+            .hero-image-wrap {
+                order: -1;
+                opacity: 1;
+            }
+
+            .hero-image-frame {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .hero-tagline {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-trust {
+                justify-content: center;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .about-image-frame {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .about-accent-box {
+                right: -8px;
+                bottom: -12px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speaking-about-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 28px 24px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+                padding: 24px 20px 0;
+            }
+
+            .coaching-hero-inner,
+            .speaking-hero-inner {
+                padding: 0 20px;
+            }
+
+            .services-inner,
+            .testimonials-inner {
+                padding: 0 20px;
+            }
+
+            .section-header {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-name h1 {
+                font-size: 1rem;
+            }
+
+            .hero-headline {
+                font-size: 2rem;
+            }
+
+            .hero-badge {
+                left: 0;
+                bottom: -12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+    ============================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+
+            <!-- Logo (Left) -->
+            <div class="header-logo">
+                <!-- LOGO: Ersetze diesen Block mit deinem Logo:
+                     <img src="/wp-content/uploads/julia-kreft-logo.png" alt="Julia Kreft Logo" class="logo-img"> -->
+                <div class="logo-placeholder">JK</div>
+            </div>
+
+            <!-- Name (Center) -->
+            <div class="header-name">
+                <h1>Julia Kreft</h1>
+                <span>Inner Clarity &amp; Self-Leadership</span>
+            </div>
+
+            <!-- Navigation (Right) -->
+            <nav class="header-nav">
+                <ul class="nav-links">
+                    <li><a onclick="showTab('coaching')" id="nav-coaching">Coaching</a></li>
+                    <li><a onclick="showTab('speaking')" id="nav-speaking">Speaking</a></li>
+                    <li><a onclick="showTab('contact')" id="nav-contact">Contact</a></li>
+                </ul>
+                <!-- CALENDLY: Ersetze href mit deinem Calendly-Link -->
+                <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary nav-cta">
+                    Work with me
+                </a>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-close" id="mobileClose">&times;</div>
+        <a onclick="showTab('home'); closeMobileMenu()">Home</a>
+        <a onclick="showTab('coaching'); closeMobileMenu()">Coaching</a>
+        <a onclick="showTab('speaking'); closeMobileMenu()">Speaking</a>
+        <a onclick="showTab('contact'); closeMobileMenu()">Contact</a>
+        <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary">Work with me</a>
+    </div>
+
+
+    <!-- ============================================
+         PAGE 1: HERO / HOME
+    ============================================ -->
+    <div id="tab-home" class="tab-content active">
+
+        <section class="hero-section">
+            <div class="hero-inner">
+
+                <div class="hero-content">
+                    <p class="hero-tagline">Inner Clarity &amp; Self-Leadership</p>
+
+                    <h2 class="hero-headline">
+                        Dein innerer Kompass.<br>
+                        Deine <em>klarste</em><br>
+                        Entscheidung.
+                    </h2>
+
+                    <p class="hero-subtext">
+                        Willkommen &mdash; ich bin Julia. Ich begleite ambitionierte Menschen dabei, innere Blockaden zu l&ouml;sen, Vertrauen in sich selbst zu entwickeln und die Klarheit zu finden, die sie f&uuml;r ihre mutigsten Entscheidungen brauchen.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a onclick="showTab('coaching')" class="btn btn-primary">
+                            Coaching entdecken
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a onclick="showTab('speaking')" class="btn btn-outline">
+                            Speaking ansehen
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-item">
+                            <strong>100%</strong>
+                            <span>zertifiziert</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>15+</strong>
+                            <span>Jahre Erfahrung</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>2in1</strong>
+                            <span>Coach &amp; Speaker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <div class="hero-image-frame">
+                        <!-- HERO BILD: Ersetze src mit deinem Foto, z.B. /wp-content/uploads/julia-kreft-hero.jpg -->
+                        <img
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&amp;q=80"
+                            alt="Julia Kreft - Coach &amp; Speaker"
+                            loading="eager"
+                        >
+                    </div>
+
+                    <div class="hero-badge animate-on-scroll delay-2">
+                        <p>Zertifizierte Coach</p>
+                        <strong>Dr. Bock Akademie</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <section style="padding: 80px 0; background: var(--white);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 0 auto;">
+
+                    <div class="service-card animate-on-scroll delay-1" style="cursor: pointer;" onclick="showTab('coaching')">
+                        <div class="card-icon" style="font-size: 2rem; background: linear-gradient(135deg, rgba(232,146,74,0.15), rgba(224,90,138,0.1));">&#127793;</div>
+                        <div class="card-label">Coaching</div>
+                        <div class="card-title">Inner Clarity &amp; Self-Leadership</div>
+                        <p class="card-desc">F&uuml;r ambitionierte Menschen in Umbruchphasen &mdash; l&ouml;se Blockaden und triff mutige Entscheidungen mit tiefem Selbstvertrauen.</p>
+                        <a style="color: var(--pink); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                            Mehr erfahren
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card animate-on-scroll delay-2" style="cursor: pointer;" onclick="showTab('speaking')">
+                        <div class="card-icon" style="font-size: 2rem; background: linear-gradient(135deg, rgba(139,107,177,0.15), rgba(224,90,138,0.1));">&#127908;</div>
+                        <div class="card-label">Speaking</div>
+                        <div class="card-title">Finance Transformation meets Leadership</div>
+                        <p class="card-desc">The Human Side of Transformation &mdash; Keynotes aus der Praxis eines Senior-Leaders, die bewegen und inspirieren.</p>
+                        <a style="color: var(--purple); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
+                            Mehr erfahren
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 80px 40px; background: var(--cream); text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="brand-divider" style="justify-content: center;"><span></span></div>
+                <blockquote style="font-family: var(--font-heading); font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--navy); line-height: 1.5; margin: 24px 0;">
+                    &bdquo;Alles, was du brauchst,<br>liegt bereits in dir.&ldquo;
+                </blockquote>
+                <div class="brand-divider" style="justify-content: center;"><span></span></div>
+                <p style="margin-top: 16px; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);">&mdash; Julia Kreft</p>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 2: COACHING
+    ============================================ -->
+    <div id="tab-coaching" class="tab-content">
+
+        <section class="coaching-hero">
+            <div class="coaching-hero-inner">
+                <span class="section-label animate-on-scroll">Inner Clarity &amp; Self-Leadership</span>
+                <h2 class="animate-on-scroll delay-1">
+                    Finde deine innere Klarheit.<br>
+                    <span class="gradient-text">F&uuml;hre dich selbst.</span>
+                </h2>
+
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+
+                <p class="animate-on-scroll delay-2">
+                    Ich helfe ambitionierten Menschen, innere Blockaden zu l&ouml;sen und tiefes Vertrauen in sich selbst zu entwickeln &mdash; damit sie mutige und klare Entscheidungen treffen.
+                </p>
+
+                <p class="italic-quote animate-on-scroll delay-3">
+                    &bdquo;Ich begleite Menschen in Umbruchphasen zu Selbsterkenntnis und zu dem Vertrauen, dass alles, was sie brauchen, bereits in ihnen liegt.&ldquo;
+                </p>
+
+                <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary animate-on-scroll delay-3">
+                    Kostenloses Vorgespr&auml;ch buchen
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-inner">
+
+                <div class="about-image-wrap animate-on-scroll">
+                    <div class="about-image-frame">
+                        <img
+                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&amp;q=80"
+                            alt="Julia Kreft - Coach f&uuml;r innere Klarheit"
+                        >
+                    </div>
+                    <div class="about-accent-box">
+                        <strong>&hearts;</strong>
+                        <span>Zertifizierte Coach</span>
+                    </div>
+                </div>
+
+                <div class="about-content animate-on-scroll delay-1">
+                    <span class="section-label">&Uuml;ber mich</span>
+                    <h2 class="section-title">
+                        Wo innere Klarheit<br>
+                        <span class="gradient-text">ihre Stimme findet</span>
+                    </h2>
+                    <div class="brand-divider"><span></span></div>
+
+                    <p>
+                        Ich bin Julia Kreft &mdash; Coach f&uuml;r innere Klarheit &amp; Self-Leadership und leidenschaftliche Begleiterin f&uuml;r Menschen, die an einem Wendepunkt ihres Lebens stehen.
+                    </p>
+                    <p>
+                        In meiner Arbeit verbinde ich fundiertes Coaching-Wissen mit tiefer Empathie und praktischer Erfahrung. Ich glaube daran, dass jeder Mensch die Antworten auf seine wichtigsten Fragen bereits in sich tr&auml;gt &mdash; manchmal braucht es nur den richtigen Raum, um sie zu h&ouml;ren.
+                    </p>
+                    <p>
+                        Meine Coaching-Ausbildung habe ich an der renommierten <strong>Dr. Bock Akademie</strong> als zertifizierter Business- und Life-Coach abgeschlossen. Dazu bringe ich jahrelange F&uuml;hrungserfahrung in internationalen Konzernen mit &mdash; ich kenne den Druck, die Unsicherheit und die Chancen, die Umbruchphasen mit sich bringen.
+                    </p>
+
+                    <div class="certification-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e05a8a" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span>Zertifizierte Business- &amp; Life-Coach | Dr. Bock Akademie</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="services-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Meine Angebote</span>
+                    <h2 class="section-title">Mit mir arbeiten</h2>
+                    <p class="section-subtitle">
+                        W&auml;hle das Format, das zu dir und deiner aktuellen Situation passt. Beginne gerne mit einem kostenfreien Kennenlerngespr&auml;ch.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+
+                    <div class="service-card animate-on-scroll delay-1">
+                        <div class="card-icon">&#127807;</div>
+                        <div class="card-label">Einstieg</div>
+                        <div class="card-title">Kostenloses Vorgespr&auml;ch</div>
+                        <div class="card-price">Kostenlos</div>
+                        <p class="card-desc">
+                            Wir lernen uns kennen, kl&auml;ren dein Anliegen und schauen gemeinsam, ob und wie ich dich unterst&uuml;tzen kann.
+                        </p>
+                        <ul class="card-features">
+                            <li class="card-feature">30 Minuten via Zoom oder Telefon</li>
+                            <li class="card-feature">Kein Commitment, kein Druck</li>
+                            <li class="card-feature">Klarheit &uuml;ber n&auml;chste Schritte</li>
+                        </ul>
+                        <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-outline" style="width: 100%; justify-content: center;">
+                            Jetzt buchen
+                        </a>
+                    </div>
+
+                    <div class="service-card featured animate-on-scroll delay-2">
+                        <div class="card-icon">&#10024;</div>
+                        <div class="card-label">Beliebt</div>
+                        <div class="card-title">Coaching Session</div>
+                        <div class="card-price">300 &euro;</div>
+                        <p class="card-desc">
+                            Eine intensive Einzelsitzung, in der wir tief in dein Thema eintauchen und konkrete Erkenntnisse erarbeiten.
+                        </p>
+                        <ul class="card-features">
+                            <li class="card-feature">60 Minuten tiefes 1:1 Coaching</li>
+                            <li class="card-feature">Fokus auf dein konkretes Anliegen</li>
+                            <li class="card-feature">Nachbereitung &amp; Impulse</li>
+                            <li class="card-feature">Flexibel buchbar</li>
+                        </ul>
+                        <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-white" style="width: 100%; justify-content: center;">
+                            Session buchen
+                        </a>
+                    </div>
+
+                    <div class="service-card animate-on-scroll delay-3">
+                        <div class="card-icon">&#128640;</div>
+                        <div class="card-label">Transformation</div>
+                        <div class="card-title">3er Coaching Paket</div>
+                        <div class="card-price">810 &euro;</div>
+                        <p class="card-desc">
+                            Drei aufeinander aufbauende Sitzungen f&uuml;r nachhaltige Ver&auml;nderung und tiefe Selbsterkenntnis.
+                        </p>
+                        <ul class="card-features">
+                            <li class="card-feature">3 &times; 60 Minuten (Gesamtwert 900 &euro;)</li>
+                            <li class="card-feature">Roter Faden &amp; Prozessbegleitung</li>
+                            <li class="card-feature">Materialien &amp; &Uuml;bungen zwischen den Sessions</li>
+                            <li class="card-feature">10% Ersparnis</li>
+                        </ul>
+                        <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                            Paket anfragen
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="testimonials-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Stimmen meiner Klient:innen</span>
+                    <h2 class="section-title">Was andere sagen</h2>
+                </div>
+
+                <div class="testimonials-note">
+                    <strong>Platzhalter:</strong> F&uuml;ge hier echte Kundenstimmen ein. Ersetze Text, Name und Position.
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Mit Julia habe ich in nur drei Sitzungen mehr Klarheit gewonnen als in einem Jahr des Gr&uuml;belns. Sie hat einen Raum geschaffen, in dem ich wirklich ehrlich zu mir sein konnte.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <strong>Anna K.</strong>
+                                <span>F&uuml;hrungskraft, Medizintechnik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Julia hat mir geholfen, eine berufliche Entscheidung zu treffen, die ich schon lange vor mir hergeschoben habe. Ihre ruhige Art und die richtigen Fragen haben wirklich etwas bewegt.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TM</div>
+                            <div class="author-info">
+                                <strong>Thomas M.</strong>
+                                <span>Senior Manager, Automotive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Ich habe durch das Coaching gelernt, meiner inneren Stimme wieder zu vertrauen. Julia ist authentisch, empathisch und gibt dir das Gef&uuml;hl, wirklich gesehen zu werden.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SH</div>
+                            <div class="author-info">
+                                <strong>Sarah H.</strong>
+                                <span>Unternehmerin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star empty">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Das Coaching mit Julia hat mir in einer sehr schwierigen Umbruchphase geholfen, den Boden unter den F&uuml;&szlig;en wiederzufinden. Absolut empfehlenswert f&uuml;r alle, die wirklich etwas ver&auml;ndern wollen.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ML</div>
+                            <div class="author-info">
+                                <strong>Markus L.</strong>
+                                <span>Projektleiter, Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 3: SPEAKING
+    ============================================ -->
+    <div id="tab-speaking" class="tab-content">
+
+        <section class="speaking-hero">
+            <div class="speaking-hero-inner">
+                <span class="section-label animate-on-scroll">Finance Transformation Speaker</span>
+
+                <h2 class="animate-on-scroll delay-1">
+                    Where Finance<br>
+                    <span class="highlight-orange">Transformation</span><br>
+                    meets <span class="highlight-pink">Leadership.</span>
+                </h2>
+
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+
+                <p class="subtext animate-on-scroll delay-2">
+                    THE HUMAN SIDE OF TRANSFORMATION
+                </p>
+
+                <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary animate-on-scroll delay-3">
+                    Speaking-Anfrage stellen
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="speaking-about">
+            <div class="speaking-about-inner">
+
+                <div class="animate-on-scroll">
+                    <span class="section-label">&Uuml;ber mich als Speaker</span>
+                    <h2 class="section-title">
+                        Aus der Praxis &mdash;<br>
+                        <span class="gradient-text">f&uuml;r die Praxis</span>
+                    </h2>
+                    <div class="brand-divider"><span></span></div>
+
+                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-body); margin-bottom: 20px;">
+                        Ich spreche &uuml;ber das, was ich selbst gelebt habe: die Herausforderungen, &Uuml;berraschungen und menschlichen Seiten echter Finance-Transformationen in internationalen Konzernen.
+                    </p>
+
+                    <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-body); margin-bottom: 32px;">
+                        Als Director Finance Excellence &amp; Transformation bei Syntegon Technology wei&szlig; ich, dass technische Exzellenz allein keine Transformation macht &mdash; es sind die Menschen, die F&uuml;hrung und die innere Haltung, die den Unterschied ausmachen.
+                    </p>
+
+                    <div class="career-timeline">
+
+                        <div class="timeline-item animate-on-scroll delay-1">
+                            <div class="timeline-dot"><span>NOW</span></div>
+                            <div class="timeline-content">
+                                <strong>Director Finance Excellence &amp; Transformation</strong>
+                                <span>Syntegon Technology GmbH &middot; Senior Leadership</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item animate-on-scroll delay-2">
+                            <div class="timeline-dot"><span>&#9670;</span></div>
+                            <div class="timeline-content">
+                                <strong>Head of Finance Transformation &amp; Processes</strong>
+                                <span>Syntegon Technology GmbH</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item animate-on-scroll delay-3">
+                            <div class="timeline-dot"><span>&#9670;</span></div>
+                            <div class="timeline-content">
+                                <strong>Managing Consultant</strong>
+                                <span>Horv&aacute;th &amp; Partners Management Consultants</span>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item animate-on-scroll delay-4">
+                            <div class="timeline-dot"><span>&#9670;</span></div>
+                            <div class="timeline-content">
+                                <strong>Finance Manager</strong>
+                                <span>Procter &amp; Gamble (P&amp;G)</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="about-image-wrap animate-on-scroll delay-1">
+                    <div class="about-image-frame">
+                        <img
+                            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&amp;q=80"
+                            alt="Julia Kreft - Finance Transformation Speaker"
+                        >
+                    </div>
+                    <div class="about-accent-box" style="right: -24px; bottom: -24px;">
+                        <strong>&#127908;</strong>
+                        <span>Speaker &amp; Director</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="keynotes-section">
+            <div style="max-width: var(--container); margin: 0 auto; padding: 0 40px;">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Keynotes</span>
+                    <h2 class="section-title">Meine Key Notes</h2>
+                    <p class="section-subtitle">
+                        Ehrliche Einblicke aus der Praxis &mdash; inspirierende Impulse f&uuml;r dein Team, dein Unternehmen, dein Event.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+
+                    <div class="keynote-card animate-on-scroll delay-1">
+                        <div class="keynote-icon">&#9889;</div>
+                        <div class="keynote-number">01</div>
+                        <h3>Why Finance Transformation fails &mdash; and what leadership has to do with it</h3>
+                        <p>
+                            Die meisten Transformationen scheitern nicht an Technologie oder Prozessen &mdash; sie scheitern an Menschen. Ich zeige, warum Leadership der entscheidende Hebel f&uuml;r erfolgreiche Finance-Transformationen ist.
+                        </p>
+                        <span class="keynote-tag">Transformation &middot; Leadership</span>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll delay-2">
+                        <div class="keynote-icon">&hearts;</div>
+                        <div class="keynote-number">02</div>
+                        <h3>The Human Side of Transformation</h3>
+                        <p>
+                            Zahlen, Systeme, Prozesse &mdash; das ist die sichtbare Seite. Aber was ist mit &Auml;ngsten, Widerst&auml;nden und dem menschlichen Bed&uuml;rfnis nach Sicherheit in unsicheren Zeiten? Ein Pl&auml;doyer f&uuml;r menschliches F&uuml;hren in digitalen Transformationen.
+                        </p>
+                        <span class="keynote-tag">Change Management &middot; Human Side</span>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll delay-3">
+                        <div class="keynote-icon">&#128506;</div>
+                        <div class="keynote-number">03</div>
+                        <h3>My Finance Transformation Journey &mdash; was ich untersch&auml;tzt habe</h3>
+                        <p>
+                            Ein pers&ouml;nlicher und ehrlicher Einblick in meine eigene Transformationsreise: Was war schwieriger als erwartet? Was h&auml;tte ich fr&uuml;her wissen m&uuml;ssen? Und was w&uuml;rde ich heute anders machen?
+                        </p>
+                        <span class="keynote-tag">Personal Story &middot; Real Talk</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="testimonials-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Feedback</span>
+                    <h2 class="section-title">Was Veranstalter sagen</h2>
+                </div>
+
+                <div class="testimonials-note">
+                    <strong>Platzhalter:</strong> F&uuml;ge hier echte Stimmen von Veranstaltern, Konferenzen oder Teilnehmenden ein.
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Julias Keynote war der absolute Highlight unserer Finance-Konferenz. Sie verbindet echte Praxiserfahrung mit einer au&szlig;ergew&ouml;hnlichen F&auml;higkeit, komplexe Themen verst&auml;ndlich und ber&uuml;hrend zu vermitteln.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RB</div>
+                            <div class="author-info">
+                                <strong>Robert B.</strong>
+                                <span>Konferenzveranstalter, CFO Summit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Was Julia auszeichnet: Sie spricht nicht &uuml;ber Transformation, sie hat sie gelebt. Das sp&uuml;rt man in jedem Satz. Unsere Teilnehmer waren begeistert und haben noch Wochen sp&auml;ter davon gesprochen.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">KS</div>
+                            <div class="author-info">
+                                <strong>Katja S.</strong>
+                                <span>Head of Learning &amp; Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 4: CONTACT
+    ============================================ -->
+    <div id="tab-contact" class="tab-content">
+
+        <section class="contact-hero">
+            <div style="max-width: 700px; margin: 0 auto; padding: 0 24px;">
+                <span class="section-label animate-on-scroll">Lass uns sprechen</span>
+                <h2 class="animate-on-scroll delay-1">
+                    Bereit f&uuml;r<br>
+                    <span class="gradient-text">den n&auml;chsten Schritt?</span>
+                </h2>
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+                <p class="section-subtitle animate-on-scroll delay-2" style="margin: 0 auto; text-align: center;">
+                    Ob du Coaching suchst, einen Speaker f&uuml;r dein Event anfragen m&ouml;chtest oder einfach mal unverbindlich sprechen willst &mdash; ich freue mich, von dir zu h&ouml;ren.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-inner">
+
+                <div>
+                    <div class="contact-info animate-on-scroll">
+                        <h3>So kannst du<br>mit mir arbeiten</h3>
+                        <p>
+                            Der einfachste Weg: Buche direkt einen Termin &uuml;ber Calendly. Alternativ kannst du mir auch eine E-Mail schreiben oder mich auf LinkedIn kontaktieren.
+                        </p>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#128197;</div>
+                            <div class="contact-text">
+                                <strong>Online Termin</strong>
+                                <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener">calendly.com/julia-kreft &#8599;</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#9993;</div>
+                            <div class="contact-text">
+                                <strong>E-Mail</strong>
+                                <!-- E-MAIL: Ersetze mit deiner echten Adresse -->
+                                <a href="mailto:DEINE@EMAIL.DE">DEINE@EMAIL.DE</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">&#128188;</div>
+                            <div class="contact-text">
+                                <strong>LinkedIn</strong>
+                                <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">Julia Kreft auf LinkedIn &#8599;</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="calendly-box animate-on-scroll delay-2" style="margin-top: 32px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 12px;">&#128197;</div>
+                        <h3>Termin buchen</h3>
+                        <p>Buche direkt dein kostenloses 30-Minuten Kennenlerngespr&auml;ch oder eine Coaching-Session.</p>
+                        <a href="YOUR_CALENDLY_LINK" target="_blank" rel="noopener" class="btn btn-primary calendly-btn">
+                            Jetzt Termin buchen
+                        </a>
+                        <div class="calendly-preview">
+                            <p>Sicher &amp; unverbindlich &middot; Sofortige Best&auml;tigung per E-Mail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll delay-1">
+                    <span class="section-label">So l&auml;uft es ab</span>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--navy); margin-bottom: 32px;">In 3 Schritten<br>zu deiner Klarheit</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">1</div>
+                            <div>
+                                <strong style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Kostenloses Vorgespr&auml;ch buchen</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Klick auf &bdquo;Termin buchen&ldquo; und w&auml;hle einen freien Slot in meinem Kalender. Kein Druck, kein Commitment.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">2</div>
+                            <div>
+                                <strong style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Kennenlerngespr&auml;ch (30 Min.)</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Wir sprechen &uuml;ber dein Anliegen, deine Ziele und schauen, ob wir ein gutes Match sind.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">3</div>
+                            <div>
+                                <strong style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Deine Reise beginnt</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Wir starten mit dem Format, das am besten zu dir passt &mdash; einzelne Session oder Paket.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 40px; padding: 28px; background: var(--cream-light); border-radius: var(--radius); border: 1px solid var(--border);">
+                        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--navy); margin-bottom: 16px;">H&auml;ufige Fragen</h4>
+
+                        <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px;">
+                            <strong style="font-size: 0.9rem; color: var(--navy);">Wo finden die Sessions statt?</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">Online via Zoom oder Telefon &mdash; flexibel und ortsunabh&auml;ngig.</p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px;">
+                            <strong style="font-size: 0.9rem; color: var(--navy);">F&uuml;r wen ist das Coaching geeignet?</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">F&uuml;r ambitionierte Menschen in beruflichen oder pers&ouml;nlichen Umbruchphasen.</p>
+                        </div>
+
+                        <div>
+                            <strong style="font-size: 0.9rem; color: var(--navy);">Wie bezahle ich?</strong>
+                            <p style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">Per &Uuml;berweisung vor der Session. Du erh&auml;ltst eine Rechnung.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="form-inner">
+                <div class="section-header animate-on-scroll" style="margin-bottom: 40px;">
+                    <span class="section-label">Kontaktformular</span>
+                    <h2 class="section-title" style="font-size: 2rem;">Schreib mir direkt</h2>
+                    <p class="section-subtitle" style="margin: 0 auto;">Du hast Fragen oder m&ouml;chtest mehr Details? Ich antworte innerhalb von 24 Stunden.</p>
+                </div>
+
+                <!-- HINWEIS: F&uuml;r echte E-Mail-Funktionalit&auml;t in WordPress nutze Contact Form 7, WPForms oder einen SMTP-Service. -->
+                <div class="contact-form animate-on-scroll delay-1">
+                    <form action="#" method="POST" onsubmit="handleFormSubmit(event)">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Vorname *</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Maria" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nachname *</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-Mail Adresse *</label>
+                            <input type="email" id="email" name="email" placeholder="maria@beispiel.de" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="topic">Ich interessiere mich f&uuml;r</label>
+                            <select id="topic" name="topic">
+                                <option value="">Bitte w&auml;hlen...</option>
+                                <option value="coaching-vorgespraech">Kostenloses Coaching-Vorgespr&auml;ch</option>
+                                <option value="coaching-session">Coaching Session (300 &euro;)</option>
+                                <option value="coaching-paket">Coaching Paket 3er (810 &euro;)</option>
+                                <option value="speaking">Speaking-Anfrage</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Deine Nachricht *</label>
+                            <textarea id="message" name="message" placeholder="Schreib mir kurz, was dich bewegt oder was du dir von unserer Zusammenarbeit erhoffst..." required></textarea>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 28px;">
+                            <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; text-transform: none; letter-spacing: 0; font-size: 0.85rem; color: var(--text-body);">
+                                <input type="checkbox" required style="width: auto; margin-top: 2px; accent-color: var(--pink);">
+                                Ich habe die Datenschutzerkl&auml;rung gelesen und stimme der Verarbeitung meiner Daten zu.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">
+                            Nachricht senden
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+
+                    </form>
+
+                    <div id="formSuccess" style="display: none; text-align: center; padding: 40px 20px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">&#10024;</div>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--navy); margin-bottom: 12px;">Danke f&uuml;r deine Nachricht!</h3>
+                        <p style="color: var(--text-body);">Ich melde mich innerhalb von 24 Stunden bei dir. Bis bald!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <h3>Julia Kreft</h3>
+                <p>Inner Clarity &amp; Self-Leadership<br>Finance Transformation Speaker</p>
+                <p class="footer-tagline">where inner clarity finds its voice</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a onclick="showTab('home')">Home</a></li>
+                    <li><a onclick="showTab('coaching')">Coaching</a></li>
+                    <li><a onclick="showTab('speaking')">Speaking</a></li>
+                    <li><a onclick="showTab('contact')">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Verbinden</h4>
+                <div class="social-links">
+                    <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 16px; line-height: 1.6;">Folge mir f&uuml;r Impulse zu<br>Klarheit &amp; Transformation.</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Julia Kreft. Alle Rechte vorbehalten.</p>
+            <div class="footer-legal">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+
+            var selectedTab = document.getElementById('tab-' + tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.classList.remove('active');
+            });
+            var activeNavItem = document.getElementById('nav-' + tabName);
+            if (activeNavItem) {
+                activeNavItem.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            setTimeout(function() {
+                observeAnimations();
+            }, 100);
+        }
+
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('siteHeader');
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        var mobileToggle = document.getElementById('mobileToggle');
+        var mobileMenu = document.getElementById('mobileMenu');
+        var mobileClose = document.getElementById('mobileClose');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                mobileMenu.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileClose) {
+            mobileClose.addEventListener('click', closeMobileMenu);
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function observeAnimations() {
+            var elements = document.querySelectorAll('.animate-on-scroll:not(.visible)');
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            elements.forEach(function(el) { observer.observe(el); });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            observeAnimations();
+        });
+
+        window.addEventListener('load', observeAnimations);
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            var successMsg = document.getElementById('formSuccess');
+
+            form.style.opacity = '0';
+            form.style.transform = 'translateY(-10px)';
+            form.style.transition = 'all 0.4s ease';
+
+            setTimeout(function() {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+                successMsg.style.animation = 'fadeInUp 0.5s ease forwards';
+            }, 400);
+        }
+
+        var logoEl = document.querySelector('.logo-placeholder');
+        if (logoEl) {
+            logoEl.addEventListener('click', function() {
+                showTab('home');
+            });
+            logoEl.style.cursor = 'pointer';
+        }
+    </script>
+
+</body>
+</html>
