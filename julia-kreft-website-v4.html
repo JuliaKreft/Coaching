@@ -1,0 +1,3340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Kreft | Inner Clarity &amp; Self-Leadership</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES - LIGHT MODE
+        ============================================ */
+        :root {
+            --orange:        #e8924a;
+            --pink:          #e05a8a;
+            --purple:        #8b6bb1;
+            --purple-dark:   #6b4d9e;
+
+            --gradient-main: linear-gradient(135deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+            --gradient-soft: linear-gradient(135deg, #f0a870 0%, #e87aaa 50%, #a888c8 100%);
+            --gradient-text: linear-gradient(90deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+
+            --cream:         #f5f0eb;
+            --cream-dark:    #ede7df;
+            --cream-light:   #faf7f4;
+            --navy:          #1e2d4a;
+            --navy-light:    #2d4060;
+            --text-body:     #3a4a5c;
+            --text-muted:    #7a8a9a;
+            --white:         #ffffff;
+            --border:        #e8e0d8;
+
+            --font-heading:  'Playfair Display', Georgia, serif;
+            --font-body:     'Inter', 'Segoe UI', sans-serif;
+            --container:     1200px;
+            --radius:        12px;
+            --radius-lg:     20px;
+
+            /* Dark mode toggle vars (Light defaults) */
+            --bg-base:       #faf7f4;
+            --bg-card:       #ffffff;
+            --bg-section:    #f5f0eb;
+            --text-primary:  #1e2d4a;
+            --header-bg:     rgba(250, 247, 244, 0.95);
+            --border-color:  #e8e0d8;
+        }
+
+        /* ============================================
+           DARK MODE
+        ============================================ */
+        [data-theme="dark"] {
+            --cream:         #1a2235;
+            --cream-dark:    #151d2e;
+            --cream-light:   #111827;
+            --navy:          #e2e8f0;
+            --navy-light:    #cbd5e1;
+            --text-body:     #94a3b8;
+            --text-muted:    #64748b;
+            --white:         #1e2d4a;
+            --border:        #2d3f5e;
+
+            --bg-base:       #111827;
+            --bg-card:       #1a2235;
+            --bg-section:    #151d2e;
+            --text-primary:  #e2e8f0;
+            --header-bg:     rgba(17, 24, 39, 0.97);
+            --border-color:  #2d3f5e;
+        }
+
+        [data-theme="dark"] body {
+            background-color: #111827;
+            color: #94a3b8;
+        }
+
+        [data-theme="dark"] .site-header {
+            background: rgba(17, 24, 39, 0.97);
+            border-bottom-color: rgba(45, 63, 94, 0.5);
+        }
+
+        [data-theme="dark"] .hero-section {
+            background: #111827;
+        }
+
+        [data-theme="dark"] .hero-section::before {
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.08) 0%, rgba(224, 90, 138, 0.05) 40%, transparent 70%);
+        }
+
+        [data-theme="dark"] .about-section,
+        [data-theme="dark"] .speaking-about,
+        [data-theme="dark"] .contact-section {
+            background: #1a2235;
+        }
+
+        [data-theme="dark"] .services-section,
+        [data-theme="dark"] .coaching-hero,
+        [data-theme="dark"] .testimonials-section,
+        [data-theme="dark"] .keynotes-section,
+        [data-theme="dark"] .contact-hero {
+            background: #151d2e;
+        }
+
+        [data-theme="dark"] .service-card,
+        [data-theme="dark"] .testimonial-card,
+        [data-theme="dark"] .keynote-card {
+            background: #1e2d4a;
+            border-color: #2d3f5e;
+        }
+
+        [data-theme="dark"] .hero-badge {
+            background: #1e2d4a;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+        }
+
+        [data-theme="dark"] .hero-trust {
+            border-top-color: #2d3f5e;
+        }
+
+        [data-theme="dark"] .nav-links a {
+            color: #94a3b8;
+        }
+
+        [data-theme="dark"] .nav-links a:hover,
+        [data-theme="dark"] .nav-links a.active {
+            color: var(--pink);
+            background: rgba(224, 90, 138, 0.12);
+        }
+
+        [data-theme="dark"] .mobile-menu {
+            background: #111827;
+        }
+
+        [data-theme="dark"] .mobile-menu a {
+            color: #e2e8f0;
+        }
+
+        [data-theme="dark"] .mobile-toggle span {
+            background: #e2e8f0;
+        }
+
+        [data-theme="dark"] .btn-outline {
+            color: #e2e8f0;
+            border-color: #2d3f5e;
+        }
+
+        [data-theme="dark"] .btn-outline:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+        }
+
+        [data-theme="dark"] .calendly-box,
+        [data-theme="dark"] .calendly-preview {
+            background: #1e2d4a;
+            border-color: #2d3f5e;
+        }
+
+        [data-theme="dark"] .certification-badge {
+            background: #1e2d4a;
+            border-color: #2d3f5e;
+        }
+
+        [data-theme="dark"] .section-title {
+            color: #e2e8f0;
+        }
+
+        [data-theme="dark"] .hero-headline {
+            color: #e2e8f0;
+        }
+
+        [data-theme="dark"] .hero-badge strong {
+            color: #e2e8f0;
+        }
+
+        [data-theme="dark"] blockquote {
+            color: #e2e8f0 !important;
+        }
+
+        [data-theme="dark"] section[style*="background: var(--white)"],
+        [data-theme="dark"] section[style*="background: var(--cream)"] {
+            background: #1a2235 !important;
+        }
+
+        /* ============================================
+           DARK MODE TOGGLE BUTTON
+        ============================================ */
+        .dark-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+
+        .dark-toggle:hover {
+            border-color: var(--pink);
+            background: rgba(224, 90, 138, 0.08);
+        }
+
+        .dark-toggle svg {
+            width: 18px;
+            height: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .dark-toggle .icon-moon { display: block; }
+        .dark-toggle .icon-sun  { display: none; }
+
+        [data-theme="dark"] .dark-toggle .icon-moon { display: none; }
+        [data-theme="dark"] .dark-toggle .icon-sun  { display: block; }
+
+        /* ============================================
+           RESET & BASE
+        ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream-light);
+            color: var(--text-body);
+            line-height: 1.7;
+            overflow-x: clip;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+        ============================================ */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .brand-divider {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .brand-divider::before,
+        .brand-divider::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background: var(--gradient-text);
+        }
+
+        .brand-divider span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+        }
+
+        /* ============================================
+           BUTTONS
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            white-space: nowrap;
+        }
+
+        /* ALL hero action buttons now share the gradient style */
+        .btn-primary {
+            background: var(--gradient-main);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(224, 90, 138, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(224, 90, 138, 0.45);
+            filter: brightness(1.05);
+        }
+
+        /* Hero secondary button — same gradient, slightly softer */
+        .btn-hero-secondary {
+            background: var(--gradient-soft);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(224, 90, 138, 0.2);
+        }
+
+        .btn-hero-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(224, 90, 138, 0.35);
+            filter: brightness(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--navy);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        /* ============================================
+           NAVIGATION / HEADER
+        ============================================ */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 244, 0.95);
+            border-bottom: 1px solid rgba(232, 224, 216, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 4px 30px rgba(30, 45, 74, 0.08);
+        }
+
+        .header-inner {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            padding: 16px 40px;
+            max-width: var(--container);
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .header-name {
+            text-align: left;
+        }
+
+        .header-name h1 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            display: inline-block;
+            background: linear-gradient(90deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: #e05a8a;
+        }
+
+        .header-name span {
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--text-body);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--pink);
+            background: rgba(224, 90, 138, 0.08);
+        }
+
+        .nav-cta {
+            margin-left: 12px;
+            padding: 10px 24px !important;
+            font-size: 0.82rem !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            margin-left: auto;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           TABS / PAGES
+        ============================================ */
+        .tab-content {
+            display: none;
+            padding-top: 80px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ============================================
+           PAGE 1: HERO
+        ============================================ */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: clip;
+            background: var(--cream-light);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.12) 0%, rgba(224, 90, 138, 0.08) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 107, 177, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            padding: 100px 40px 80px;
+            max-width: var(--container);
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-tagline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-tagline::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gradient-text);
+        }
+
+        .hero-headline {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtext {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--pink);
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            animation: fadeInRight 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trust-item span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .trust-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--border);
+        }
+
+        /* ============================================
+           PAGE 2: COACHING
+        ============================================ */
+        .coaching-hero {
+            background: var(--cream);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coaching-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .coaching-hero-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coaching-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 24px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .coaching-hero p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .italic-quote {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--pink);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .about-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+        }
+
+        .about-image-frame {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.12);
+        }
+
+        .about-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-accent-box {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: var(--gradient-main);
+            color: var(--white);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(224, 90, 138, 0.3);
+        }
+
+        .about-accent-box strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+        }
+
+        .about-accent-box span {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+        }
+
+        .about-content {
+            padding: 20px 0;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-body);
+            margin-bottom: 20px;
+        }
+
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 10px 20px;
+            margin-top: 8px;
+        }
+
+        .certification-badge svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .certification-badge span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-body);
+        }
+
+        /* ============================================
+           SERVICE CARDS — Equal Height Fix
+        ============================================ */
+        .services-section {
+            padding: 80px 0;
+            background: var(--cream-light);
+        }
+
+        .services-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-subtitle {
+            margin: 0 auto;
+        }
+
+        /* Größere Überschrift für "Meine Angebote" */
+        .section-header .section-title-large {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            /* Equal height + button at bottom */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card .card-features {
+            flex: 1;
+        }
+
+        .service-card .btn {
+            margin-top: auto;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-main);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border-color: transparent;
+        }
+
+        [data-theme="dark"] .service-card.featured {
+            background: linear-gradient(135deg, #2d4060 0%, #3a5080 100%);
+        }
+
+        .service-card.featured::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.featured .card-title,
+        .service-card.featured .card-price {
+            color: var(--white);
+        }
+
+        [data-theme="dark"] .service-card.featured .card-title,
+        [data-theme="dark"] .service-card.featured .card-price {
+            color: #e2e8f0;
+        }
+
+        .service-card.featured .card-desc {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .service-card.featured .card-feature {
+            color: rgba(255,255,255,0.8);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-card.featured .card-icon {
+            background: rgba(255,255,255,0.15);
+        }
+
+        .card-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--pink);
+            margin-bottom: 8px;
+        }
+
+        .service-card.featured .card-label {
+            color: #f0a870;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .service-card.featured .card-price {
+            background: var(--gradient-soft);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+
+        .card-feature {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-feature::before {
+            content: '\2726';
+            font-size: 0.6rem;
+            color: var(--pink);
+            flex-shrink: 0;
+        }
+
+        .service-card.featured .card-feature::before {
+            color: var(--orange);
+        }
+
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testimonials-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(30, 45, 74, 0.08);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--cream);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+
+        .star {
+            font-size: 1rem;
+            color: var(--orange);
+        }
+
+        .star.empty {
+            color: var(--border);
+        }
+
+        .testimonial-text {
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #2a3540;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        [data-theme="dark"] .testimonial-text {
+            color: #94a3b8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        [data-theme="dark"] .author-avatar {
+            color: #ffffff;
+        }
+
+        .author-info strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .author-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .testimonials-note {
+            background: linear-gradient(135deg, rgba(232,146,74,0.08), rgba(224,90,138,0.08));
+            border: 1px dashed var(--pink);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            text-align: center;
+        }
+
+        /* ============================================
+           PAGE 3: SPEAKING
+        ============================================ */
+        .speaking-hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #2d4060 60%, #3a3060 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .speaking-hero {
+            background: linear-gradient(135deg, #0d1627 0%, #1a2438 60%, #1e1a38 100%);
+        }
+
+        .speaking-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(232, 146, 74, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .speaking-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 107, 177, 0.25) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .speaking-hero-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .speaking-hero .section-label {
+            color: var(--orange);
+        }
+
+        .speaking-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.15;
+            margin-bottom: 16px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        [data-theme="dark"] .speaking-hero h2 {
+            color: #e2e8f0;
+        }
+
+        .speaking-hero h2 .highlight-orange {
+            color: var(--orange);
+        }
+
+        .speaking-hero h2 .highlight-pink {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .speaking-hero .subtext {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 40px;
+        }
+
+        .speaking-about {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .speaking-about-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .career-timeline {
+            margin-top: 32px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 28px;
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 44px;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--pink), transparent);
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(224, 90, 138, 0.3);
+        }
+
+        .timeline-dot span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        [data-theme="dark"] .timeline-dot span {
+            color: #ffffff;
+        }
+
+        .timeline-content strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 2px;
+        }
+
+        .timeline-content span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .keynotes-section {
+            padding: 80px 0;
+            background: var(--cream-light);
+        }
+
+        .keynote-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .keynote-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 45, 74, 0.1);
+            border-color: var(--pink);
+        }
+
+        .keynote-number {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .keynote-icon {
+            margin-bottom: 16px;
+            color: var(--pink);
+            opacity: 0.85;
+        }
+
+        .keynote-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .keynote-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .keynote-tag {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--pink);
+            padding: 4px 12px;
+            background: rgba(224, 90, 138, 0.08);
+            border-radius: 50px;
+        }
+
+        /* ============================================
+           PAGE 4: CONTACT
+        ============================================ */
+        .contact-hero {
+            background: var(--cream);
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .contact-hero h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            padding: 60px 0 80px;
+            background: var(--white);
+        }
+
+        .contact-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .calendly-box {
+            background: var(--cream-light);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .calendly-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .calendly-box p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            margin-bottom: 28px;
+        }
+
+        .calendly-btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 1rem !important;
+            padding: 16px 32px !important;
+        }
+
+        .calendly-preview {
+            margin-top: 24px;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .calendly-preview p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .contact-info {
+            padding: 8px 0;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 24px;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            color: var(--text-body);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .contact-detail:last-of-type {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .contact-text strong {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .contact-text a {
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-text a:hover {
+            color: var(--pink);
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        .site-footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            padding: 48px 0 32px;
+        }
+
+        [data-theme="dark"] .site-footer {
+            background: #0d1627;
+        }
+
+        .footer-inner {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            font-family: var(--font-heading);
+            color: var(--orange);
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        [data-theme="dark"] .footer-links h4,
+        [data-theme="dark"] .footer-social h4 {
+            color: #e2e8f0;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--pink);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            background: var(--gradient-main);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 24px 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-legal a {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover {
+            color: var(--pink);
+        }
+
+        /* ============================================
+           ANIMATIONS
+        ============================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(8px); }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 1024px) {
+            .hero-inner {
+                gap: 48px;
+                padding: 100px 24px 60px;
+            }
+            .about-inner,
+            .speaking-about-inner {
+                gap: 48px;
+                padding: 0 24px;
+            }
+            .contact-inner {
+                gap: 48px;
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Header */
+            .header-inner {
+                grid-template-columns: 1fr auto;
+                padding: 12px 16px;
+            }
+            .header-name { text-align: left; padding-left: 0; }
+            .header-nav { display: none; }
+            .mobile-toggle { display: flex; }
+
+            /* Mobile menu overlay */
+            .mobile-menu {
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: var(--cream-light);
+                z-index: 999;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+            }
+            .mobile-menu.open { display: flex; transform: translateX(0); }
+            .mobile-menu a {
+                font-family: var(--font-heading);
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: var(--navy);
+                transition: color 0.2s;
+                cursor: pointer;
+            }
+            .mobile-menu a:hover { color: var(--pink); }
+            .mobile-menu-close {
+                position: absolute;
+                top: 24px; right: 24px;
+                width: 40px; height: 40px;
+                display: flex; align-items: center; justify-content: center;
+                cursor: pointer; font-size: 1.5rem; color: var(--navy);
+            }
+
+            /* Hero */
+            .hero-section { min-height: auto; padding-bottom: 40px; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 90px 20px 40px;
+                text-align: center;
+            }
+            .hero-image-wrap { order: -1; opacity: 1; }
+            .hero-image-frame { max-width: 260px; margin: 0 auto; }
+            .hero-tagline { justify-content: center; }
+            .hero-actions {
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            .hero-actions .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .hero-trust {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            .hero-trust .trust-divider { display: none; }
+
+            /* Home service cards (2-col inline grid) */
+            .container > div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* About */
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 20px;
+            }
+            .about-image-frame { max-width: 260px; margin: 0 auto; }
+            .about-accent-box { right: -8px; bottom: -12px; }
+
+            /* Services cards */
+            .cards-grid { grid-template-columns: 1fr; gap: 16px; }
+
+            /* Testimonials */
+            .testimonials-grid { grid-template-columns: 1fr; }
+
+            /* Speaking */
+            .speaking-about-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 20px;
+            }
+
+            /* Contact */
+            .contact-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 20px;
+            }
+
+            /* Footer */
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 0 20px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+                padding: 20px 20px 0;
+            }
+            .footer-legal { justify-content: center; }
+
+            /* Section padding resets */
+            .coaching-hero-inner,
+            .speaking-hero-inner { padding: 0 20px; }
+            .services-inner,
+            .testimonials-inner { padding: 0 20px; }
+            .section-header { padding: 0 20px; }
+            .keynotes-section > div { padding: 0 20px !important; }
+
+            /* General section padding reduction */
+            .coaching-hero,
+            .speaking-hero { padding: 80px 0 48px; }
+            .about-section,
+            .services-section,
+            .testimonials-section,
+            .speaking-about,
+            .keynotes-section,
+            .contact-hero,
+            .contact-section { padding: 48px 0; }
+
+            /* Buttons full-width on mobile */
+            .coaching-hero-inner .btn,
+            .speaking-hero-inner .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+            /* Quote section */
+            section[style*="padding: 80px 40px"] { padding: 48px 20px !important; }
+
+            /* Home inline grids with style attrs */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            /* Steps */
+            div[style*="display: flex; gap: 20px; align-items: flex-start"] { gap: 12px; }
+
+            /* FAQ */
+            div[style*="margin-top: 40px; padding: 28px"] { margin-top: 24px; padding: 20px 16px !important; }
+
+        }
+
+        @media (max-width: 480px) {
+            .header-name h1 { font-size: 0.95rem; }
+            .header-name span { font-size: 0.55rem; }
+            .hero-headline { font-size: 1.8rem; }
+            .hero-image-frame { max-width: 220px; }
+            .section-title { font-size: 1.6rem; }
+            .coaching-hero h2 { font-size: 1.7rem; }
+            .speaking-hero h2 { font-size: 1.8rem; }
+            .contact-form { padding: 20px 16px; }
+            .service-card { padding: 28px 20px; }
+            .testimonial-card { padding: 24px 20px; }
+            .btn { padding: 12px 24px; font-size: 0.85rem; }
+            .dark-toggle, .lang-toggle { width: 34px; height: 34px; }
+            .lang-toggle { padding: 0 10px; font-size: 0.72rem; }
+            .hero-trust strong { font-size: 1.3rem; }
+            .trust-item span { font-size: 0.7rem; }
+            .card-price { font-size: 1.5rem; }
+            .footer-inner { padding: 0 16px; }
+        }
+
+        /* ============================================
+           MOBILE — touch targets
+        ============================================ */
+        @media (max-width: 768px) {
+            * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+            a, button { touch-action: manipulation; }
+            .mobile-toggle {
+                min-width: 48px;
+                min-height: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .mobile-menu a {
+                min-height: 56px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mobile-menu-close {
+                min-width: 48px;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .btn { min-height: 48px; }
+        }
+
+        .lang-toggle {
+            height: 40px;
+            padding: 0 14px;
+            border-radius: 50px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-body);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--text-body);
+            transition: all 0.3s ease;
+            margin-left: 6px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .lang-toggle:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+        }
+        [data-theme="dark"] .lang-toggle {
+            color: #94a3b8;
+        }
+        [data-theme="dark"] .lang-toggle:hover {
+            color: var(--pink);
+            border-color: var(--pink);
+        }
+        /* ============================================
+           MODAL (Impressum / Datenschutz / AGB)
+        ============================================ */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,15,28,0.65);
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .modal-box {
+            background: var(--white, #fff);
+            border-radius: 20px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 48px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.2);
+        }
+        [data-theme="dark"] .modal-box {
+            background: #1a2235;
+            color: #94a3b8;
+        }
+        .modal-overlay.open .modal-box {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid var(--border, #e8e0d8);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-muted, #7a8a9a);
+            transition: all 0.2s ease;
+        }
+        .modal-close:hover {
+            border-color: var(--pink, #e05a8a);
+            color: var(--pink, #e05a8a);
+        }
+        .modal-box h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            color: var(--navy, #1e2d4a);
+            margin-bottom: 24px;
+        }
+        [data-theme="dark"] .modal-box h2 {
+            color: #e2e8f0;
+        }
+        .modal-box h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--navy, #1e2d4a);
+            margin: 20px 0 8px;
+        }
+        [data-theme="dark"] .modal-box h3 {
+            color: #cbd5e1;
+        }
+        .modal-box p, .modal-box li {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--text-body, #3a4a5c);
+            margin-bottom: 8px;
+        }
+        [data-theme="dark"] .modal-box p,
+        [data-theme="dark"] .modal-box li {
+            color: #94a3b8;
+        }
+        .modal-box ul {
+            padding-left: 20px;
+        }
+        .modal-box a {
+            color: var(--pink, #e05a8a);
+        }
+        .modal-divider {
+            height: 1px;
+            background: var(--border, #e8e0d8);
+            margin: 20px 0;
+        }
+        @media (max-width: 600px) {
+            .modal-box { padding: 28px 20px; }
+            .cookie-banner { padding: 16px 20px; }
+        }
+        /* ============================================
+           COOKIE BANNER
+        ============================================ */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: #1e2d4a;
+            color: rgba(255,255,255,0.85);
+            padding: 20px 40px;
+            display: none;
+            pointer-events: none;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.15);
+            flex-wrap: wrap;
+        }
+        .cookie-banner.visible {
+            display: flex;
+            pointer-events: all;
+        }
+        [data-theme="dark"] .cookie-banner {
+            background: #0d1627;
+        }
+        .cookie-banner p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            flex: 1;
+            min-width: 200px;
+        }
+        .cookie-banner a {
+            color: #e8924a;
+            text-decoration: underline;
+        }
+        .cookie-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .cookie-btn-accept {
+            background: linear-gradient(135deg, #e8924a 0%, #e05a8a 50%, #8b6bb1 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .cookie-btn-essential {
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .cookie-btn-essential:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+        .cookie-btn-accept:hover { filter: brightness(1.1); }
+
+        [data-theme="dark"] img[alt="Syntegon Logo"],
+        [data-theme="dark"] img[alt="Horváth Logo"],
+        [data-theme="dark"] img[alt="P&G Logo"] {
+            filter: invert(1) brightness(1.8);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         COOKIE BANNER
+    ============================================ -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen" aria-live="polite">
+        <p>
+            Diese Website verwendet Cookies, um den Betrieb sicherzustellen und das Nutzungserlebnis zu verbessern.
+            Mit Klick auf „Alle akzeptieren" stimmen Sie dem Einsatz aller Cookies zu.
+            Mehr Infos in unserer <a href="#" onclick="showModal('datenschutz'); return false;">Datenschutzerklärung</a>.
+        </p>
+        <div class="cookie-actions">
+            <button class="cookie-btn-essential" onclick="acceptCookies('essential')">Nur notwendige</button>
+            <button class="cookie-btn-accept" onclick="acceptCookies('all')">Alle akzeptieren</button>
+        </div>
+    </div>
+
+    <!-- ============================================
+         MODALS: Impressum / Datenschutz / AGB
+    ============================================ -->
+    <!-- IMPRESSUM -->
+    <div id="modal-impressum" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-impressum-title">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('impressum')" aria-label="Schließen">&times;</button>
+            <h2 id="modal-impressum-title">Impressum</h2>
+            <p><strong>Angaben gemäß § 5 TMG</strong></p>
+            <p>Julia Kreft<br>Silberburgstrasse 125<br>70176 Stuttgart<br>Deutschland</p>
+            <p>E-Mail: <a href="mailto:hello@juliakreft.de">hello@juliakreft.de</a></p>
+            <div class="modal-divider"></div>
+            <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+            <p>Julia Kreft<br>Silberburgstrasse 125<br>70176 Stuttgart<br>Deutschland</p>
+            <div class="modal-divider"></div>
+            <h3>EU-Streitschlichtung</h3>
+            <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+            <p>Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+        </div>
+    </div>
+
+    <!-- DATENSCHUTZ -->
+    <div id="modal-datenschutz" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-datenschutz-title">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('datenschutz')" aria-label="Schließen">&times;</button>
+            <h2 id="modal-datenschutz-title">Datenschutzerklärung</h2>
+            <h3>1. Allgemeine Hinweise</h3>
+            <p>Der Schutz Ihrer persönlichen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Art, den Umfang und den Zweck der Verarbeitung personenbezogener Daten auf dieser Website.</p>
+            <h3>2. Verantwortliche Stelle</h3>
+            <p>Julia Kreft<br>Silberburgstrasse 125<br>70176 Stuttgart<br>Deutschland<br>
+            E-Mail: <a href="mailto:hello@juliakreft.de">hello@juliakreft.de</a></p>
+            <h3>3. Hosting</h3>
+            <p>Diese Website wird bei STRATO gehostet. Beim Besuch der Website werden durch den Hostinganbieter automatisch Server-Logfiles erfasst (z.&nbsp;B. IP-Adresse, Browsertyp, Uhrzeit des Zugriffs). Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zur technisch sicheren Bereitstellung der Website.</p>
+            <h3>4. Cookies</h3>
+            <p>Diese Website verwendet Cookies. Cookies dienen dazu, die Nutzung der Website nutzerfreundlicher und sicherer zu machen. Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden oder Cookies blockieren.</p>
+            <h3>5. Analyse- und Trackingtools</h3>
+            <p>Auf dieser Website können Analyse- und Trackingtools eingesetzt werden, um das Nutzerverhalten auszuwerten und die Website zu verbessern. Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, sofern erforderlich.</p>
+            <h3>6. Externe Dienste</h3>
+            <p><strong>Calendly:</strong> Zur Terminvereinbarung wird Calendly verwendet. Bei Nutzung des Dienstes werden personenbezogene Daten an Calendly übermittelt. Weitere Informationen finden Sie in der Datenschutzerklärung von Calendly.</p>
+            <h3>7. LinkedIn</h3>
+            <p>Diese Website kann Verlinkungen zu LinkedIn enthalten. Beim Anklicken eines Links gelten die Datenschutzbestimmungen des jeweiligen Anbieters.</p>
+            <h3>8. Rechte betroffener Personen</h3>
+            <p>Sie haben das Recht auf:</p>
+            <ul>
+                <li>Auskunft</li>
+                <li>Berichtigung</li>
+                <li>Löschung</li>
+                <li>Einschränkung der Verarbeitung</li>
+                <li>Datenübertragbarkeit</li>
+                <li>Widerspruch gegen die Verarbeitung</li>
+            </ul>
+            <p>Außerdem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+            <h3>9. SSL-/TLS-Verschlüsselung</h3>
+            <p>Diese Website nutzt SSL-/TLS-Verschlüsselung zum Schutz vertraulicher Inhalte.</p>
+        </div>
+    </div>
+
+    <!-- AGB -->
+    <div id="modal-agb" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-agb-title">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('agb')" aria-label="Schließen">&times;</button>
+            <h2 id="modal-agb-title">Allgemeine Geschäftsbedingungen (AGB)</h2>
+            <h3>1. Geltungsbereich</h3>
+            <p>Diese AGB gelten für alle Leistungen und Inhalte, die über diese Website angeboten werden.</p>
+            <h3>2. Leistungen</h3>
+            <p>Die Website dient der Information über Coaching-, Speaking- und Beratungsleistungen.</p>
+            <h3>3. Vertragsschluss</h3>
+            <p>Ein Vertrag kommt erst durch individuelle Vereinbarung zwischen Anbieter und Kunde zustande.</p>
+            <h3>4. Haftung</h3>
+            <p>Es wird keine Garantie für die ständige Verfügbarkeit oder Fehlerfreiheit der Website übernommen.</p>
+            <h3>5. Urheberrecht</h3>
+            <p>Alle Inhalte dieser Website unterliegen dem Urheberrecht. Eine Vervielfältigung oder Verwendung ist ohne ausdrückliche Zustimmung nicht gestattet.</p>
+            <h3>6. Schlussbestimmungen</h3>
+            <p>Es gilt das Recht der Bundesrepublik Deutschland, soweit gesetzlich zulässig.</p>
+            <div class="modal-divider"></div>
+            <h3>Haftungsausschluss</h3>
+            <p><strong>Haftung für Inhalte:</strong> Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen.</p>
+            <p><strong>Haftung für Links:</strong> Diese Website enthält Links zu externen Websites Dritter. Für deren Inhalte übernehmen wir keine Haftung.</p>
+            <p><strong>Urheberrecht:</strong> Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem deutschen Urheberrecht.</p>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         HEADER / NAVIGATION
+    ============================================ -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <!-- Name (Center) -->
+            <div class="header-name" data-nav="home" style="cursor:pointer;">
+                <h1>Julia Kreft</h1>
+                <span>Coach &amp; Speaker f&uuml;r innere Transformation</span>
+            </div>
+
+            <!-- Navigation (Right) -->
+            <nav class="header-nav">
+                <ul class="nav-links">
+                    <li><a href="#" data-nav="coaching" id="nav-coaching" class="nav-coaching-text">Coaching</a></li>
+                    <li><a href="#" data-nav="speaking" id="nav-speaking" class="nav-speaking-text">Speaking</a></li>
+                    <li><a href="#" data-nav="contact" id="nav-contact" class="nav-contact-text">Contact</a></li>
+                </ul>
+                <!-- CALENDLY: Ersetze href mit deinem Calendly-Link -->
+                <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener" class="btn btn-primary nav-cta">
+                    Work with me
+                </a>
+                <!-- Dark Mode Toggle -->
+                <button class="dark-toggle" id="darkToggle" aria-label="Dark Mode umschalten" title="Dark Mode umschalten">
+                    <!-- Moon icon (shown in light mode) -->
+                    <svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" color="var(--text-body)">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+                    </svg>
+                    <!-- Sun icon (shown in dark mode) -->
+                    <svg class="icon-sun" fill="none" stroke="#e8924a" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+                <!-- Language Toggle -->
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language" title="Switch to English / Zurück zu Deutsch">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <span id="langLabel">EN</span>
+                </button>
+            </nav>
+
+            <!-- Mobile Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-close" id="mobileClose">&times;</div>
+        <a href="#" data-nav="home" data-close-menu="true">Home</a>
+        <a href="#" data-nav="coaching" data-close-menu="true">Coaching</a>
+        <a href="#" data-nav="speaking" data-close-menu="true">Speaking</a>
+        <a href="#" data-nav="contact" data-close-menu="true">Contact</a>
+        <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener" class="btn btn-primary">Work with me</a>
+    </div>
+
+
+    <!-- ============================================
+         PAGE 1: HERO / HOME
+    ============================================ -->
+    <div id="tab-home" class="tab-content active">
+
+        <section class="hero-section">
+            <div class="hero-inner">
+
+                <div class="hero-content">
+                    <p class="hero-tagline">Coach &amp; Speaker f&uuml;r innere Transformation</p>
+
+                    <h2 class="hero-headline">
+                        Au&szlig;en erfolgreich.<br>
+                        Innen noch unterwegs.<br>
+                        <em>Das kenne ich.</em>
+                    </h2>
+
+                    <p class="hero-subtext hero-subtext">
+                        Ich war selbst da drin &mdash; Top-Uni, internationale Konzerne, Karriere nach Plan. Und trotzdem irgendwann die Frage: Ist das wirklich alles? Als Coach begleite ich Menschen durch diese innere Transformation. Als Speaker bringe ich genau diese Geschichte auf die B&uuml;hne.
+                    </p>
+
+                    <div class="hero-actions">
+                        <!-- Beide Buttons jetzt im gleichen Gradient-Stil -->
+                        <a href="#" data-nav="coaching" class="btn btn-primary btn-coaching-discover">
+                            <span class="btn-coaching-discover">Coaching entdecken</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#" data-nav="speaking" class="btn btn-hero-secondary btn-speaking-view">
+                            <span class="btn-speaking-view">Speaking ansehen</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <!-- GEÄNDERT: "100% zertifiziert" → "DBI zertifiziert" -->
+                        <div class="trust-item">
+                            <strong>DBI</strong>
+                            <span class="trust-dbi-label">zertifiziert</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <!-- GEÄNDERT: "15+ Jahre" → "7+ Jahre" -->
+                        <div class="trust-item">
+                            <strong>7+</strong>
+                            <span class="trust-years-label">Jahre Erfahrung</span>
+                        </div>
+                        <div class="trust-divider"></div>
+                        <div class="trust-item">
+                            <strong>2in1</strong>
+                            <span class="trust-2in1-label">Coach &amp; Speaker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrap">
+                    <div class="hero-image-frame">
+                        <!-- ========================================================
+                             PLATZHALTER HERO-BILD
+                             Aktuell: f276350a.jpg (hochgeladenes Foto)
+                             Für WordPress: Ersetze src mit deinem Bildpfad, z.B.:
+                             src="/wp-content/uploads/julia-kreft-hero.jpg"
+                             ======================================================== -->
+                        <img
+                            src="f276350a.jpg"
+                            alt="Julia Kreft - Coach &amp; Speaker"
+                            loading="eager"
+                        >
+                    </div>
+                </div>
+                <!-- ENTFERNT: hero-badge "Zertifizierte Coach / Dr. Bock Akademie" -->
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Service Overview Cards -->
+        <section style="padding: 80px 0; background: var(--white);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto;">
+
+                    <!-- Coaching Card — minimalistisches Outline-Icon -->
+                    <div class="service-card animate-on-scroll delay-1" data-nav="coaching" style="cursor: pointer;">
+                        <div class="card-icon" style="background: linear-gradient(135deg, rgba(232,146,74,0.12), rgba(224,90,138,0.08));">
+                            <svg width="26" height="26" fill="none" stroke="var(--pink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                                <path d="M12 12v2M10 14h4"/>
+                            </svg>
+                        </div>
+                        <div class="card-label card-coaching-label-el">Coaching</div>
+                        <div class="card-title card-coaching-title-el">Inner Clarity &amp; Self-Leadership</div>
+                        <p class="card-desc card-coaching-desc-el">F&uuml;r erfolgreiche Menschen, die sp&uuml;ren: da m&uuml;sste mehr sein. Finde heraus, was dir wirklich wichtig ist &mdash; und triff Entscheidungen, die sich richtig anf&uuml;hlen.</p>
+                        <a href="#" data-nav="coaching" style="color: var(--pink); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; margin-top: auto;">
+                            Mehr erfahren
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="service-card animate-on-scroll delay-2" data-nav="speaking" style="cursor: pointer;">
+                        <div class="card-icon" style="background: linear-gradient(135deg, rgba(139,107,177,0.12), rgba(224,90,138,0.08));">
+                            <svg width="26" height="26" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <rect x="9" y="2" width="6" height="11" rx="3"/>
+                                <path d="M5 10a7 7 0 0 0 14 0"/>
+                                <line x1="12" y1="19" x2="12" y2="22"/>
+                                <line x1="8" y1="22" x2="16" y2="22"/>
+                            </svg>
+                        </div>
+                        <div class="card-label card-speaking-label-el">Speaking</div>
+                        <div class="card-title card-speaking-title-el">Finance Transformation meets Leadership</div>
+                        <p class="card-desc card-speaking-desc-el">The Human Side of Transformation &mdash; Keynotes aus der Praxis einer Senior-Leaderin, die bewegen und inspirieren.</p>
+                        <a href="#" data-nav="speaking" style="color: var(--purple); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; margin-top: auto;">
+                            Mehr erfahren
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <!-- GEÄNDERT: Zitat-Text angepasst, Name verkleinert -->
+        <section style="padding: 80px 40px; background: var(--cream); text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="brand-divider" style="justify-content: center;"><span></span></div>
+                <blockquote style="font-family: var(--font-heading); font-style: italic; font-size: clamp(1.4rem, 3vw, 2rem); color: var(--navy); line-height: 1.5; margin: 24px 0;">
+                    <span class="quote-text-el">&bdquo;Alles beginnt in dir &mdash;<br>denn alles, was du brauchst,<br>liegt bereits dort.&ldquo;</span>
+                </blockquote>
+                <div class="brand-divider" style="justify-content: center;"><span></span></div>
+                <!-- GEÄNDERT: Name verkleinert (font-size 0.75rem statt 0.85rem) -->
+                <p style="margin-top: 16px; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted);">&mdash; Julia Kreft</p>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 2: COACHING
+    ============================================ -->
+    <div id="tab-coaching" class="tab-content">
+
+        <section class="coaching-hero">
+            <div class="coaching-hero-inner">
+                <span class="section-label animate-on-scroll coaching-hero-label">Coach f&uuml;r innere Transformation</span>
+                <h2 class="animate-on-scroll delay-1 coaching-hero-h2">
+                    Erfolgreich sein und sich<br>
+                    auch so f&uuml;hlen &mdash;<br>
+                    <span class="gradient-text">das sind zwei verschiedene Dinge.</span>
+                </h2>
+
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+
+                <p class="animate-on-scroll delay-2 coaching-hero-p1">
+                    Ich begleite Menschen, die nach au&szlig;en l&auml;ngst angekommen sind &mdash; und innen noch unterwegs. Die bereit sind, wirklich hinzuschauen. An das, was unter der Oberfl&auml;che liegt. An das, was sie schon lange wissen, aber noch nicht geh&ouml;rt haben.
+                </p>
+
+                <p class="italic-quote animate-on-scroll delay-3 coaching-italic-quote">
+                    &bdquo;Wann f&auml;ngst du an, dir selbst die erste Priorit&auml;t zu sein?&ldquo;
+                </p>
+
+                <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener" class="btn btn-primary animate-on-scroll delay-3">
+                    <span class="coaching-cta-btn">Kostenloses Vorgespr&auml;ch buchen</span>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-inner">
+
+                <!-- ENTFERNT: Button "Zertifizierte Coach" über dem Bild (about-accent-box entfernt) -->
+                <div class="about-image-wrap animate-on-scroll">
+                    <div class="about-image-frame">
+                        <img
+                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&amp;q=80"
+                            alt="Julia Kreft - Coach f&uuml;r innere Klarheit"
+                        >
+                    </div>
+                    <!-- about-accent-box entfernt -->
+                </div>
+
+                <div class="about-content animate-on-scroll delay-1">
+                    <span class="section-label about-label-el">&Uuml;ber mich</span>
+                    <h2 class="section-title about-h2-el">
+                        Warum ich wei&szlig;,<br>
+                        <span class="gradient-text">wor&uuml;ber ich spreche.</span>
+                    </h2>
+                    <div class="brand-divider"><span></span></div>
+
+                    <p class="about-p1-el">
+                        Universit&auml;t St. Gallen. Procter &amp; Gamble. Horv&aacute;th. Heute Director bei Syntegon. Von au&szlig;en: eine klassische High-Performance-Karriere. Von innen: lange Zeit ein Mensch, der funktioniert hat &mdash; aber nicht wirklich gelebt.
+                    </p>
+                    <p class="about-p2-el">
+                        Ich habe den Ehrgeiz, den Druck und die innere Leere dahinter selbst gef&uuml;hlt. Ich habe an meinen Blockaden gearbeitet, alte Glaubenss&auml;tze aufgebrochen und gelernt, mir selbst die erste Priorit&auml;t zu sein &mdash; ohne die Karriere aufzugeben. Ich habe mich bewusst entschieden.
+                    </p>
+                    <p class="about-p3-el">
+                        Heute begleite ich Menschen, die genau an diesem Punkt stehen. Als zertifizierter Business- und Life-Coach (<strong>Dr. Bock Institute, DBI</strong>) und mit Jahren an F&uuml;hrungserfahrung in internationalen Konzernen bringe ich beides mit: die Sprache deiner Welt &mdash; und die Tiefe, die echte Ver&auml;nderung braucht.
+                    </p>
+
+                    <!-- ENTFERNT: certification-badge unter dem Text -->
+                </div>
+
+            </div>
+        </section>
+
+        <section class="services-section">
+            <div class="services-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label services-label-el">Zusammenarbeiten</span>
+                    <h2 class="section-title-large services-h2-el">Der erste Schritt</h2>
+                    <p class="section-subtitle services-sub-el">
+                        Jede Zusammenarbeit beginnt mit einem Klarheitsgespräch. Kein Druck, kein Commitment &mdash; nur ein ehrliches Gespräch darüber, wo du stehst und wohin du willst.
+                    </p>
+                </div>
+
+                <div style="max-width: 560px; margin: 0 auto;">
+                    <div class="service-card featured animate-on-scroll" style="text-align: left;">
+                        <div class="card-icon">
+                            <svg width="26" height="26" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div class="card-label">Einstieg</div>
+                        <div class="card-title">Klarheitsgespräch</div>
+                        <div class="card-price">Kostenlos</div>
+                        <p class="card-desc">
+                            Wir sprechen offen &uuml;ber dein Anliegen, deine Situation und was du dir w&uuml;nschst. Gemeinsam schauen wir, ob und wie eine Zusammenarbeit f&uuml;r dich Sinn macht.
+                        </p>
+                        <ul class="card-features">
+                            <li class="card-feature">30 Minuten via Video Call oder Telefon</li>
+                            <li class="card-feature">Coaching-Sessions sind jeweils 60&ndash;90 Minuten</li>
+                            <li class="card-feature">Umfang und Format bestimmen wir gemeinsam</li>
+                            <li class="card-feature">Kein Commitment, kein Druck</li>
+                        </ul>
+                        <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener" class="btn btn-white" style="width: 100%; justify-content: center;">
+                            Klarheitsgespräch anfragen →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="testimonials-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label testi-label-c-el">Stimmen meiner Klient:innen</span>
+                    <h2 class="section-title testi-h2-c-el">Was andere sagen</h2>
+                </div>
+
+                <div class="testimonials-note">
+                    <strong>Platzhalter:</strong> F&uuml;ge hier echte Kundenstimmen ein. Ersetze Text, Name und Position.
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Mit Julia habe ich in nur drei Sitzungen mehr Klarheit gewonnen als in einem Jahr des Gr&uuml;belns. Sie hat einen Raum geschaffen, in dem ich wirklich ehrlich zu mir sein konnte.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <strong>Anna K.</strong>
+                                <span>F&uuml;hrungskraft, Medizintechnik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text testi-c2-text-el">
+                            &bdquo;Julia hat mir geholfen, eine berufliche Entscheidung zu treffen, die ich schon lange vor mir hergeschoben habe. Ihre ruhige Art und die richtigen Fragen haben wirklich etwas bewegt.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TM</div>
+                            <div class="author-info">
+                                <strong>Thomas M.</strong>
+                                <span>Senior Manager, Automotive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Ich habe durch das Coaching gelernt, meiner inneren Stimme wieder zu vertrauen. Julia ist authentisch, empathisch und gibt dir das Gef&uuml;hl, wirklich gesehen zu werden.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SH</div>
+                            <div class="author-info">
+                                <strong>Sarah H.</strong>
+                                <span>Unternehmerin</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star empty">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text">
+                            &bdquo;Das Coaching mit Julia hat mir in einer sehr schwierigen Umbruchphase geholfen, den Boden unter den F&uuml;&szlig;en wiederzufinden. Absolut empfehlenswert f&uuml;r alle, die wirklich etwas ver&auml;ndern wollen.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">ML</div>
+                            <div class="author-info">
+                                <strong>Markus L.</strong>
+                                <span>Projektleiter, Consulting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 3: SPEAKING
+    ============================================ -->
+    <div id="tab-speaking" class="tab-content">
+
+        <section class="speaking-hero">
+            <div class="speaking-hero-inner">
+                <span class="section-label animate-on-scroll speaking-hero-label-el">The Human Side of Finance Transformation</span>
+
+                <h2 class="animate-on-scroll delay-1">
+                    Transformation<br>
+                    <span class="highlight-orange">beginnt</span><br>
+                    <span class="highlight-pink">innen.</span>
+                </h2>
+
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+
+                <a href="mailto:speaking@juliakreft.de" class="btn btn-primary animate-on-scroll delay-3">
+                    <span class="speaking-cta-btn">Speaking-Anfrage stellen</span>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="speaking-about">
+            <div class="speaking-about-inner">
+
+                <div class="animate-on-scroll">
+                    <span class="section-label speaking-about-label-el">&Uuml;ber mich als Speaker</span>
+                    <h2 class="section-title speaking-h2-el">
+                        Ich f&uuml;hre heute noch &mdash;<br>
+                        <span class="gradient-text">aber mit einem anderen Blick als fr&uuml;her.</span>
+                    </h2>
+                    <div class="brand-divider"><span></span></div>
+
+                    <p class="speaking-p1-el" style="font-size: 1.05rem; line-height: 1.9; color: var(--text-body); margin-bottom: 20px;">
+                    Ich bin kein ehemaliger Manager, der im R&uuml;ckspiegel &uuml;ber Konzernleben spricht. Als Director Finance Excellence &amp; Transformation bei Syntegon f&uuml;hre ich heute noch Teams, verantworte Transformationsprojekte und kenne den Druck, die Erwartungen und die stillen Fragen, die F&uuml;hrungskr&auml;fte abends mit nach Hause nehmen &mdash; aus erster Hand.
+                    </p>
+
+                    <p class="speaking-p2-el" style="font-size: 1.05rem; line-height: 1.9; color: var(--text-body); margin-bottom: 32px;">
+                    Und gleichzeitig habe ich einen Weg gefunden, der nicht auf Kosten von mir selbst geht. Nicht weil ich ausgestiegen bin &mdash; sondern weil ich gelernt habe, von innen heraus zu f&uuml;hren. Das ist es, wor&uuml;ber ich spreche: nicht Theorie, nicht R&uuml;ckblick. Sondern das, was gerade jetzt m&ouml;glich ist.
+                    </p>
+
+                    <div class="career-timeline">
+
+                        
+                        <div class="timeline-item animate-on-scroll delay-1">
+                            <div class="timeline-dot"><span>NOW</span></div>
+                            <div class="timeline-content">
+                                <strong>Director Finance Excellence &amp; Transformation</strong>
+                                <span>Syntegon &middot; Senior Leadership</span>
+                                <img
+                                    src="https://www.syntegon.com/hubfs/00_assets/Logos/Syntegon-Logo-Black.svg"
+                                    alt="Syntegon Logo"
+                                    style="height:18px; width:auto; margin-top:8px; display:block; opacity:0.75; filter: var(--syntegon-logo-filter, none);"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- ENTFERNT: "Head of Finance Transformation & Processes" Position -->
+
+                        <div class="timeline-item animate-on-scroll delay-2">
+                            <div class="timeline-dot"><span>&#9670;</span></div>
+                            <div class="timeline-content">
+                                <strong>Managing Consultant</strong>
+                                <span>Horv&aacute;th &amp; Partners Management Consultants</span>
+                                <img
+                                    src="https://www.horvath-partners.com/HORVATH-Logo_Pride_RGB_467_112px.png"
+                                    alt="Horváth Logo"
+                                    style="height:18px; width:auto; margin-top:8px; display:block; opacity:0.75;"
+                                >
+                            </div>
+                        </div>
+
+                        <!-- GEÄNDERT: "(P&G)" entfernt, nur "Procter & Gamble" -->
+                        <div class="timeline-item animate-on-scroll delay-3">
+                            <div class="timeline-dot"><span>&#9670;</span></div>
+                            <div class="timeline-content">
+                                <strong>Finance Manager</strong>
+                                <span>Procter &amp; Gamble</span>
+                                <img
+                                    src="https://images.ctfassets.net/4pyncle6plhv/7znyJc3Y7SecEoKSYKWoaQ/49ac06aea06f008fba51530a091675f9/P_G_Logo_RGB.svg"
+                                    alt="P&G Logo"
+                                    style="height:18px; width:auto; margin-top:8px; display:block; opacity:0.75;"
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="about-image-wrap animate-on-scroll delay-1">
+                    <div class="about-image-frame">
+                        <img
+                            src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&amp;q=80"
+                            alt="Julia Kreft - Finance Transformation Speaker"
+                        >
+                    </div>
+                    <!-- ENTFERNT: about-accent-box "Speaker & Director" -->
+                </div>
+
+            </div>
+        </section>
+
+        <section class="keynotes-section">
+            <div style="max-width: var(--container); margin: 0 auto; padding: 0 40px;">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label keynotes-label-el">Keynotes</span>
+                    <h2 class="section-title keynotes-h2-el">Meine Key Notes</h2>
+                    <p class="section-subtitle keynotes-sub-el">
+                        Vortr&auml;ge, die unter die Oberfl&auml;che gehen &mdash; f&uuml;r Teams, F&uuml;hrungskr&auml;fte und Events, die echte Impulse wollen.
+                    </p>
+                </div>
+
+                <div class="cards-grid">
+
+                    <div class="keynote-card animate-on-scroll delay-1">
+                        <div class="keynote-icon">
+                            <svg width="24" height="24" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div class="keynote-number">01</div>
+                        <h3 class="k1-title-el">Why Finance Transformation fails &mdash; and what leadership has to do with it</h3>
+                        <p class="k1-body-el">
+                            Die meisten Transformationen scheitern nicht an Technologie oder Prozessen &mdash; sie scheitern an Menschen. Ich zeige, warum Leadership der entscheidende Hebel f&uuml;r erfolgreiche Finance-Transformationen ist &mdash; und was ich selbst dabei gelernt habe.
+                        </p>
+                        <span class="keynote-tag">Transformation &middot; Leadership</span>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll delay-2">
+                        <div class="keynote-icon">
+                            <svg width="24" height="24" fill="none" stroke="var(--pink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <div class="keynote-number">02</div>
+                        <h3 class="k2-title-el">High Performance &amp; innere Leere &mdash; warum beides zusammen existiert</h3>
+                        <p class="k2-body-el">
+                            Die meisten F&uuml;hrungskr&auml;fte liefern &mdash; und fragen sich heimlich, ob sie genug sind. Ich spreche &uuml;ber die stille Epidemie in F&uuml;hrungsetagen: &auml;u&szlig;erer Erfolg ohne innere Sicherheit &mdash; und wie echter Wandel m&ouml;glich ist.
+                        </p>
+                        <span class="keynote-tag">Leadership &middot; Mentale St&auml;rke</span>
+                    </div>
+
+                    <div class="keynote-card animate-on-scroll delay-3">
+                        <div class="keynote-icon">
+                            <svg width="24" height="24" fill="none" stroke="var(--purple)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                                <line x1="9" y1="3" x2="9" y2="18"/>
+                                <line x1="15" y1="6" x2="15" y2="21"/>
+                            </svg>
+                        </div>
+                        <div class="keynote-number">03</div>
+                        <h3 class="k3-title-el">Wann f&auml;ngst du an, dir selbst die erste Priorit&auml;t zu sein?</h3>
+                        <p class="k3-body-el">
+                            &Uuml;ber den Moment, in dem Erfolg nicht mehr reicht &mdash; und was danach kommt. Ein ehrlicher Vortrag &uuml;ber innere Blockaden, falsche Glaubenss&auml;tze und die Entscheidung, das eigene Leben wirklich zu leben.
+                        </p>
+                        <span class="keynote-tag">Innere Transformation &middot; Selbstwert</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="testimonials-inner">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label testi-label-s-el">Feedback</span>
+                    <h2 class="section-title testi-h2-s-el">Was Veranstalter sagen</h2>
+                </div>
+
+                <div class="testimonials-note">
+                    <strong>Platzhalter:</strong> F&uuml;ge hier echte Stimmen von Veranstaltern, Konferenzen oder Teilnehmenden ein.
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card animate-on-scroll delay-1">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text testi-s1-text-el">
+                            &bdquo;Julias Keynote war der absolute Highlight unserer Finance-Konferenz. Sie verbindet echte Praxiserfahrung mit einer au&szlig;ergew&ouml;hnlichen F&auml;higkeit, komplexe Themen verst&auml;ndlich und ber&uuml;hrend zu vermitteln.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RB</div>
+                            <div class="author-info">
+                                <strong>Robert B.</strong>
+                                <span>Konferenzveranstalter, CFO Summit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll delay-2">
+                        <div class="star-rating">
+                            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                        </div>
+                        <p class="testimonial-text testi-s2-text-el">
+                            &bdquo;Was Julia auszeichnet: Sie spricht nicht &uuml;ber Transformation, sie hat sie gelebt. Das sp&uuml;rt man in jedem Satz. Unsere Teilnehmer waren begeistert und haben noch Wochen sp&auml;ter davon gesprochen.&ldquo;
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">KS</div>
+                            <div class="author-info">
+                                <strong>Katja S.</strong>
+                                <span>Head of Learning &amp; Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         PAGE 4: CONTACT
+    ============================================ -->
+    <div id="tab-contact" class="tab-content">
+
+        <section class="contact-hero">
+            <div style="max-width: 700px; margin: 0 auto; padding: 0 24px;">
+                <span class="section-label animate-on-scroll contact-hero-label-el">Lass uns sprechen</span>
+                <h2 class="animate-on-scroll delay-1 contact-hero-h2-el">
+                    Bereit f&uuml;r<br>
+                    <span class="gradient-text">den n&auml;chsten Schritt?</span>
+                </h2>
+                <div class="brand-divider animate-on-scroll delay-2" style="justify-content: center;"><span></span></div>
+                <p class="section-subtitle animate-on-scroll delay-2 contact-hero-sub-el" style="margin: 0 auto; text-align: center;">
+                    Ob du Coaching suchst, einen Speaker f&uuml;r dein Event anfragen m&ouml;chtest oder einfach mal unverbindlich sprechen willst &mdash; ich freue mich, von dir zu h&ouml;ren.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-inner">
+
+                <div>
+                    <div class="contact-info animate-on-scroll">
+                        <h3 class="contact-info-h3-el">So kannst du<br>mit mir arbeiten</h3>
+                        <p class="contact-info-p-el">
+                            Der einfachste Weg: Buche direkt einen Termin &uuml;ber Calendly. Alternativ kannst du mir auch eine E-Mail schreiben oder mich auf LinkedIn kontaktieren.
+                        </p>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" fill="none" stroke="var(--pink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong class="contact-detail-cal-el">Online Termin</strong>
+                                <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener">calendly.com/juliakreft &#8599;</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" fill="none" stroke="var(--pink)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong class="contact-detail-email-el">E-Mail</strong>
+                                <a href="mailto:hello@juliakreft.de">hello@juliakreft.de</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <strong class="contact-detail-li-el">LinkedIn</strong>
+                                <a href="https://www.linkedin.com/in/juliakreft/" target="_blank" rel="noopener">Julia Kreft auf LinkedIn &#8599;</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="calendly-box animate-on-scroll delay-2" style="margin-top: 32px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 12px;">&#128197;</div>
+                        <h3 class="calendly-box-h3-el">Termin buchen</h3>
+                        <p class="calendly-box-p-el">Buche direkt dein kostenloses 30-Minuten Kennenlerngespr&auml;ch oder eine Coaching-Session.</p>
+                        <a href="https://calendly.com/juliakreft" target="_blank" rel="noopener" class="btn btn-primary calendly-btn">
+                            <span class="calendly-box-btn-el">Jetzt Termin buchen</span>
+                        </a>
+                        <div class="calendly-preview">
+                            <p class="calendly-preview-p-el">Sicher &amp; unverbindlich &middot; Sofortige Best&auml;tigung per E-Mail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll delay-1">
+                    <span class="section-label steps-label-el">So l&auml;uft es ab</span>
+                    <h3 class="steps-h3-el" style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--navy); margin-bottom: 32px;">In 3 Schritten<br>zu deiner Klarheit</h3>
+
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">1</div>
+                            <div>
+                                <strong class="step1-title-el" style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Kostenloses Vorgespr&auml;ch buchen</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Klick auf &bdquo;Termin buchen&ldquo; und w&auml;hle einen freien Slot in meinem Kalender. Kein Druck, kein Commitment.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">2</div>
+                            <div>
+                                <strong class="step2-title-el" style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Kennenlerngespr&auml;ch (30 Min.)</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Wir sprechen &uuml;ber dein Anliegen, deine Ziele und schauen, ob wir ein gutes Match sind.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; align-items: flex-start;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gradient-main); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; flex-shrink: 0; box-shadow: 0 4px 12px rgba(224,90,138,0.3);">3</div>
+                            <div>
+                                <strong class="step3-title-el" style="display: block; font-size: 1rem; color: var(--navy); margin-bottom: 4px;">Deine Reise beginnt</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.6;">Wir starten mit dem Format, das am besten zu dir passt &mdash; einzelne Session oder Paket.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 40px; padding: 28px; background: var(--cream-light); border-radius: var(--radius); border: 1px solid var(--border);">
+                        <h4 class="faq-h4-el" style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--navy); margin-bottom: 16px;">H&auml;ufige Fragen</h4>
+
+                        <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px;">
+                            <strong class="faq-q1-el" style="font-size: 0.9rem; color: var(--navy);">Wo finden die Sessions statt?</strong>
+                            <p class="faq-a1-el" style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">Online via Video Call oder pers&ouml;nlich.</p>
+                        </div>
+
+                        <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px;">
+                            <strong class="faq-q2-el" style="font-size: 0.9rem; color: var(--navy);">F&uuml;r wen ist das Coaching geeignet?</strong>
+                            <p class="faq-a2-el" style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">F&uuml;r ambitionierte Menschen in beruflichen oder pers&ouml;nlichen Umbruchphasen.</p>
+                        </div>
+
+                        <div>
+                            <strong class="faq-q3-el" style="font-size: 0.9rem; color: var(--navy);">Wie bezahle ich?</strong>
+                            <p class="faq-a3-el" style="font-size: 0.85rem; color: var(--text-body); margin-top: 4px;">Per Rechnung nach der Session.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ============================================
+         FOOTER
+    ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <h3>Julia Kreft</h3>
+                <p>Coach &amp; Speaker f&uuml;r innere Transformation</p>
+                <p class="footer-tagline">where inner clarity finds its voice</p>
+            </div>
+
+            <div class="footer-links">
+                <h4 class="footer-nav-h4-el">Navigation</h4>
+                <ul>
+                    <li><a href="#" data-nav="home" class="footer-nav-home-el">Home</a></li>
+                    <li><a href="#" data-nav="coaching" class="footer-nav-coaching-el">Coaching</a></li>
+                    <li><a href="#" data-nav="speaking" class="footer-nav-speaking-el">Speaking</a></li>
+                    <li><a href="#" data-nav="contact" class="footer-nav-contact-el">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4 class="footer-social-h4-el">Verbinden</h4>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/juliakreft/" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+
+                </div>
+                <p class="footer-social-p-el" style="font-size: 0.8rem; margin-top: 16px; line-height: 1.6;">Verbinde dich mit mir auf LinkedIn.</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copy-el">&copy; 2025 Julia Kreft. Alle Rechte vorbehalten.</p>
+            <div class="footer-legal">
+                <a href="#" class="footer-impressum-el" onclick="showModal('impressum'); return false;">Impressum</a>
+                <a href="#" class="footer-datenschutz-el" onclick="showModal('datenschutz'); return false;">Datenschutz</a>
+                <a href="#" class="footer-agb-el" onclick="showModal('agb'); return false;">AGB</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+(function() {
+
+    /* ── Tab Navigation ── */
+    function navTo(name) {
+        console.log('nav clicked', name);
+        document.querySelectorAll('.tab-content').forEach(function(t) {
+            t.classList.remove('active');
+        });
+        var target = document.getElementById('tab-' + name);
+        if (target) target.classList.add('active');
+        window.scrollTo(0, 0);
+        closeMobileMenu();
+        setTimeout(observeAnimations, 50);
+    }
+
+    function closeMobileMenu() {
+        var menu = document.getElementById('mobileMenu');
+        if (menu) menu.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    /* ── Animations ── */
+    function observeAnimations() {
+        var els = document.querySelectorAll('.animate-on-scroll:not(.visible)');
+        if (!els.length) return;
+        if (!window.IntersectionObserver) {
+            els.forEach(function(el) { el.classList.add('visible'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+            });
+        }, { threshold: 0.05 });
+        els.forEach(function(el) { obs.observe(el); });
+        setTimeout(function() {
+            document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }, 800);
+    }
+
+    /* ── Cookie Banner ── */
+    function initCookieBanner() {
+        var banner = document.getElementById('cookieBanner');
+        if (!banner) return;
+        try {
+            if (!localStorage.getItem('jk-cookie-v2')) banner.classList.add('visible');
+        } catch(e) {}
+    }
+
+    window.acceptCookies = function(level) {
+        try { localStorage.setItem('jk-cookie-v2', level); } catch(e) {}
+        var banner = document.getElementById('cookieBanner');
+        if (banner) banner.classList.remove('visible');
+    };
+
+    /* ── Modals ── */
+    window.showModal = function(id) {
+        var el = document.getElementById('modal-' + id);
+        if (el) { el.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    };
+    window.closeModal = function(id) {
+        var el = document.getElementById('modal-' + id);
+        if (el) { el.classList.remove('open'); document.body.style.overflow = ''; }
+    };
+
+    /* ── Dark Mode ── */
+    function initDarkMode() {
+        var htmlEl = document.documentElement;
+        try {
+            var saved = localStorage.getItem('jk-theme');
+            if (saved) htmlEl.setAttribute('data-theme', saved);
+        } catch(e) {}
+        var btn = document.getElementById('darkToggle');
+        if (btn) {
+            btn.addEventListener('click', function() {
+                var next = htmlEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                htmlEl.setAttribute('data-theme', next);
+                try { localStorage.setItem('jk-theme', next); } catch(e) {}
+            });
+        }
+    }
+
+    /* ── Language Toggle ── */
+    var currentLang = 'de';
+    var translations = {
+        "nav-coaching-text":    { de: "Coaching",  en: "Coaching" },
+        "nav-speaking-text":    { de: "Speaking",  en: "Speaking" },
+        "nav-contact-text":     { de: "Contact",   en: "Contact"  },
+        "nav-cta-text":         { de: "Work with me", en: "Work with me" },
+        "hero-tagline":    { de: "Coach & Speaker für innere Transformation", en: "Coach & Speaker for Inner Transformation" },
+        "hero-headline":   { de: "Außen erfolgreich.<br>Innen noch unterwegs.<br><em>Das kenne ich.</em>", en: "Successful on the outside.<br>Still finding your way within.<br><em>I know that feeling.</em>" },
+        "hero-subtext":    { de: "Ich war selbst da drin — Top-Uni, internationale Konzerne, Karriere nach Plan. Und trotzdem irgendwann die Frage: Ist das wirklich alles? Als Coach begleite ich Menschen durch diese innere Transformation. Als Speaker bringe ich genau diese Geschichte auf die Bühne.", en: "I’ve been there myself — top university, global corporations, career on track. And then one day: is this really it? As a coach I guide people through that inner shift. As a speaker I bring that story to the stage." },
+        "btn-coaching":    { de: "Coaching entdecken", en: "Explore Coaching" },
+        "btn-speaking":    { de: "Speaking ansehen",   en: "See Speaking"     },
+        "trust-dbi":       { de: "zertifiziert",       en: "certified"        },
+        "trust-years":     { de: "Jahre Erfahrung",    en: "years experience" },
+        "trust-2in1":      { de: "Coach & Speaker",    en: "Coach & Speaker"  },
+        "card-coaching-label": { de: "Coaching", en: "Coaching" },
+        "card-coaching-title": { de: "Inner Clarity & Self-Leadership", en: "Inner Clarity & Self-Leadership" },
+        "card-coaching-desc":  { de: "Für erfolgreiche Menschen, die spüren: da müsste mehr sein. Finde heraus, was dir wirklich wichtig ist — und triff Entscheidungen, die sich richtig anfühlen.", en: "For successful people who sense there’s more. Find out what actually matters to you — and make decisions that genuinely feel right." },
+        "card-coaching-link":  { de: "Mehr erfahren", en: "Learn more" },
+        "card-speaking-label": { de: "Speaking", en: "Speaking" },
+        "card-speaking-title": { de: "Finance Transformation meets Leadership", en: "Finance Transformation meets Leadership" },
+        "card-speaking-desc":  { de: "The Human Side of Transformation — Keynotes aus der Praxis einer Senior-Leaderin, die bewegen und inspirieren.", en: "The Human Side of Transformation — keynotes straight from the trenches of a senior leader who’s actually lived it." },
+        "card-speaking-link":  { de: "Mehr erfahren", en: "Learn more" },
+        "quote-text": { de: "„Alles beginnt in dir —<br>denn alles, was du brauchst,<br>liegt bereits dort.“", en: "“Everything starts within you —<br>because everything you need<br>is already there.”" },
+        "coaching-label": { de: "Coach für innere Transformation", en: "Coach for Inner Transformation" },
+        "coaching-h2":    { de: "Erfolgreich sein und sich auch so fühlen —<br><span class='gradient-text'>das sind zwei verschiedene Dinge.</span>", en: "Being successful and actually feeling it —<br><span class='gradient-text'>those are two very different things.</span>" },
+        "coaching-p1":    { de: "Ich begleite Menschen, die nach außen längst angekommen sind — und innen noch unterwegs. Die bereit sind, wirklich hinzuschauen. An das, was unter der Oberfläche liegt. An das, was sie schon lange wissen, aber noch nicht gehört haben.", en: "I work with people who’ve already made it on the outside — and are still finding their way on the inside. Who are ready to look honestly at what’s really going on. At what they’ve always known but never let themselves hear." },
+        "coaching-quote": { de: "„Wann fängst du an, dir selbst die erste Priorität zu sein?“", en: "“When will you start making yourself your own first priority?”" },
+        "coaching-cta":   { de: "Kostenloses Vorgespräch buchen", en: "Book a free intro call" },
+        "about-label": { de: "Über mich", en: "About me" },
+        "about-h2":    { de: "Warum ich weiß,<br><span class='gradient-text'>worüber ich spreche.</span>", en: "Why I know<br><span class='gradient-text'>what I’m talking about.</span>" },
+        "about-p1":    { de: "Universität St. Gallen. Procter & Gamble. Horváth. Heute Director bei Syntegon. Von außen: eine klassische High-Performance-Karriere. Von innen: lange Zeit ein Mensch, der funktioniert hat — aber nicht wirklich gelebt.", en: "University of St. Gallen. Procter & Gamble. Horváth. Now Director at Syntegon. On the outside: a textbook high-performance career. On the inside: years of performing — without really living." },
+        "about-p2":    { de: "Ich habe den Ehrgeiz, den Druck und die innere Leere dahinter selbst gefühlt. Ich habe an meinen Blockaden gearbeitet, alte Glaubenssätze aufgebrochen und gelernt, mir selbst die erste Priorität zu sein — ohne die Karriere aufzugeben. Ich habe mich bewusst entschieden.", en: "I’ve felt the ambition, the pressure, and the quiet emptiness that can come with it. I’ve done the inner work — broken old patterns, cleared deep-seated beliefs, and learned to put myself first. Without walking away from the career. I made a choice." },
+        "about-p3":    { de: "Heute begleite ich Menschen, die genau an diesem Punkt stehen. Als zertifizierter Business- und Life-Coach (<strong>Dr. Bock Institute, DBI</strong>) und mit Jahren an Führungserfahrung in internationalen Konzernen bringe ich beides mit: die Sprache deiner Welt — und die Tiefe, die echte Veränderung braucht.", en: "Now I work with people who are at exactly that point. As a certified Business & Life Coach (<strong>Dr. Bock Institute, DBI</strong>) with years of senior leadership experience in global companies, I bring both: the language of your world — and the depth that real change actually requires." },
+        "services-label":    { de: "Zusammenarbeiten", en: "What I Offer" },
+        "services-h2":       { de: "Der erste Schritt", en: "The First Step" },
+        "services-subtitle": { de: "Jede Zusammenarbeit beginnt mit einem Klarheitsgespräch.", en: "Every collaboration starts with a clarity call." },
+        "speaking-hero-label":  { de: "The Human Side of Finance Transformation", en: "The Human Side of Finance Transformation" },
+        "speaking-cta":         { de: "Speaking-Anfrage stellen", en: "Reach out about speaking" },
+        "speaking-about-label": { de: "Über mich als Speaker", en: "About me as a speaker" },
+        "speaking-h2":          { de: "Ich führe heute noch —<br><span class='gradient-text'>aber mit einem anderen Blick als früher.</span>", en: "I’m still in it —<br><span class='gradient-text'>just with very different eyes.</span>" },
+        "speaking-p1":          { de: "Ich spreche über das, was die meisten nicht ansprechen: dass echter Wandel nicht mit Prozessen beginnt — sondern mit dem Menschen dahinter.", en: "I speak about what most people don’t say out loud: that real change doesn’t start with processes — it starts with the person behind them." },
+        "speaking-p2":          { de: "Als Director Finance Excellence & Transformation bei Syntegon führe ich heute noch Teams und kenne den Druck aus erster Hand.", en: "As Director of Finance Excellence & Transformation at Syntegon, I still lead teams — I know this pressure from the inside." },
+        "keynotes-label":       { de: "Keynotes", en: "Keynotes" },
+        "keynotes-h2":          { de: "Meine Key Notes", en: "My Keynotes" },
+        "keynotes-sub":         { de: "Vorträge, die unter die Oberfläche gehen.", en: "Talks that go beneath the surface." },
+        "k1-title": { de: "Why Finance Transformation fails — and what leadership has to do with it", en: "Why Finance Transformations Fail — and What Leadership Has to Do With It" },
+        "k1-body":  { de: "Die meisten Transformationen scheitern nicht an Technologie — sie scheitern an Menschen.", en: "Most transformations don’t fail because of bad tech — they fail because of people." },
+        "k2-title": { de: "High Performance & innere Leere — warum beides zusammen existiert", en: "High Performance & Inner Emptiness — Why They Coexist" },
+        "k2-body":  { de: "Die meisten Führungskräfte liefern — und fragen sich heimlich, ob sie genug sind.", en: "Most leaders deliver — and quietly wonder if they’re enough." },
+        "k3-title": { de: "Wann fängst du an, dir selbst die erste Priorität zu sein?", en: "When Will You Start Making Yourself Your First Priority?" },
+        "k3-body":  { de: "Über den Moment, in dem Erfolg nicht mehr reicht — und was danach kommt.", en: "About the moment when success stops being enough — and what comes next." },
+        "contact-hero-label": { de: "Lass uns sprechen", en: "Let’s connect" },
+        "contact-hero-h2":    { de: "Bereit für<br><span class='gradient-text'>den nächsten Schritt?</span>", en: "Ready to take<br><span class='gradient-text'>the next step?</span>" },
+        "contact-hero-sub":   { de: "Ob du Coaching suchst oder einen Speaker anfragen möchtest — ich freue mich, von dir zu hören.", en: "Whether you’re looking for coaching or a speaker — I’d love to hear from you." },
+        "footer-nav-h4":      { de: "Navigation", en: "Navigate" },
+        "footer-social-h4":   { de: "Verbinden",  en: "Let’s connect" },
+        "footer-copy":        { de: "© 2025 Julia Kreft. Alle Rechte vorbehalten.", en: "© 2025 Julia Kreft. All rights reserved." },
+        "footer-impressum":   { de: "Impressum",   en: "Legal Notice" },
+        "footer-datenschutz": { de: "Datenschutz", en: "Privacy Policy" },
+        "footer-agb":         { de: "AGB",         en: "Terms" },
+        "footer-nav-home":    { de: "Home",     en: "Home"     },
+        "footer-nav-coaching":{ de: "Coaching", en: "Coaching" },
+        "footer-nav-speaking":{ de: "Speaking", en: "Speaking" },
+        "footer-nav-contact": { de: "Contact",  en: "Contact"  }
+    };
+
+    var i18nMap = [
+        ['#nav-coaching','nav-coaching-text','text'],
+        ['#nav-speaking','nav-speaking-text','text'],
+        ['#nav-contact','nav-contact-text','text'],
+        ['.nav-cta','nav-cta-text','text'],
+        ['.hero-tagline','hero-tagline','text'],
+        ['.hero-headline','hero-headline','html'],
+        ['.hero-subtext','hero-subtext','html'],
+        ['.btn-coaching-discover','btn-coaching','text'],
+        ['.btn-speaking-view','btn-speaking','text'],
+        ['.card-coaching-label-el','card-coaching-label','text'],
+        ['.card-coaching-title-el','card-coaching-title','text'],
+        ['.card-coaching-desc-el','card-coaching-desc','html'],
+        ['.card-coaching-link-el','card-coaching-link','text'],
+        ['.card-speaking-label-el','card-speaking-label','text'],
+        ['.card-speaking-title-el','card-speaking-title','text'],
+        ['.card-speaking-desc-el','card-speaking-desc','html'],
+        ['.card-speaking-link-el','card-speaking-link','text'],
+        ['.coaching-hero-label','coaching-label','text'],
+        ['.coaching-hero-h2','coaching-h2','html'],
+        ['.coaching-hero-p1','coaching-p1','html'],
+        ['.coaching-italic-quote','coaching-quote','html'],
+        ['.coaching-cta-btn','coaching-cta','text'],
+        ['.about-label-el','about-label','text'],
+        ['.about-h2-el','about-h2','html'],
+        ['.about-p1-el','about-p1','html'],
+        ['.about-p2-el','about-p2','html'],
+        ['.about-p3-el','about-p3','html'],
+        ['.services-label-el','services-label','text'],
+        ['.services-h2-el','services-h2','text'],
+        ['.speaking-hero-label-el','speaking-hero-label','text'],
+        ['.speaking-cta-btn','speaking-cta','text'],
+        ['.speaking-about-label-el','speaking-about-label','text'],
+        ['.speaking-h2-el','speaking-h2','html'],
+        ['.speaking-p1-el','speaking-p1','html'],
+        ['.speaking-p2-el','speaking-p2','html'],
+        ['.keynotes-label-el','keynotes-label','text'],
+        ['.keynotes-h2-el','keynotes-h2','text'],
+        ['.keynotes-sub-el','keynotes-sub','html'],
+        ['.k1-title-el','k1-title','html'],
+        ['.k1-body-el','k1-body','html'],
+        ['.k2-title-el','k2-title','html'],
+        ['.k2-body-el','k2-body','html'],
+        ['.k3-title-el','k3-title','html'],
+        ['.k3-body-el','k3-body','html'],
+        ['.contact-hero-label-el','contact-hero-label','text'],
+        ['.contact-hero-h2-el','contact-hero-h2','html'],
+        ['.contact-hero-sub-el','contact-hero-sub','html'],
+        ['.footer-nav-h4-el','footer-nav-h4','text'],
+        ['.footer-social-h4-el','footer-social-h4','text'],
+        ['.footer-copy-el','footer-copy','text'],
+        ['.footer-impressum-el','footer-impressum','text'],
+        ['.footer-datenschutz-el','footer-datenschutz','text'],
+        ['.footer-agb-el','footer-agb','text'],
+        ['.footer-nav-home-el','footer-nav-home','text'],
+        ['.footer-nav-coaching-el','footer-nav-coaching','text'],
+        ['.footer-nav-speaking-el','footer-nav-speaking','text'],
+        ['.footer-nav-contact-el','footer-nav-contact','text']
+    ];
+
+    function applyLang(lang) {
+        i18nMap.forEach(function(entry) {
+            document.querySelectorAll(entry[0]).forEach(function(el) {
+                var t = translations[entry[1]];
+                if (!t) return;
+                if (entry[2] === 'html') el.innerHTML = t[lang];
+                else el.textContent = t[lang];
+            });
+        });
+        document.documentElement.lang = lang;
+        var lbl = document.getElementById('langLabel');
+        if (lbl) lbl.textContent = lang === 'de' ? 'EN' : 'DE';
+        currentLang = lang;
+        try { localStorage.setItem('jk-lang', lang); } catch(e) {}
+    }
+
+    /* ── Bootstrap everything after DOM ready ── */
+    document.addEventListener('DOMContentLoaded', function() {
+
+        /* Direct listeners – no event delegation */
+
+        /* Mobile Toggle */
+        var mobileToggle = document.getElementById('mobileToggle');
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', function() {
+                console.log('mobileToggle clicked');
+                var menu = document.getElementById('mobileMenu');
+                if (menu) {
+                    menu.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    console.log('mobile menu opened');
+                }
+            });
+        }
+
+        /* Mobile Close */
+        var mobileClose = document.getElementById('mobileClose');
+        if (mobileClose) {
+            mobileClose.addEventListener('click', closeMobileMenu);
+        }
+
+        /* All [data-nav] elements – direct listeners */
+        document.querySelectorAll('[data-nav]').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                var nav = el.getAttribute('data-nav');
+                console.log('nav clicked', nav);
+                navTo(nav);
+            });
+        });
+
+        /* Modal close on overlay click */
+        document.querySelectorAll('.modal-overlay').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                if (e.target === el) { el.classList.remove('open'); document.body.style.overflow = ''; }
+            });
+        });
+
+        /* Escape key closes modals */
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.open').forEach(function(el) {
+                    el.classList.remove('open'); document.body.style.overflow = '';
+                });
+            }
+        });
+
+        /* Scroll shadow on header */
+        window.addEventListener('scroll', function() {
+            var h = document.getElementById('siteHeader');
+            if (h) h.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+
+        /* Lang toggle */
+        var langBtn = document.getElementById('langToggle');
+        if (langBtn) {
+            langBtn.addEventListener('click', function() {
+                applyLang(currentLang === 'de' ? 'en' : 'de');
+            });
+        }
+
+        /* Restore lang */
+        try {
+            var savedLang = localStorage.getItem('jk-lang');
+            if (savedLang && savedLang !== 'de') applyLang(savedLang);
+        } catch(e) {}
+
+        initDarkMode();
+        initCookieBanner();
+        observeAnimations();
+    });
+
+})();
+</script>
+
+</body>
+</html>
