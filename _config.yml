@@ -1,0 +1,10 @@
+title: "Julia Kreft"
+url: "https://www.juliakreft.de"
+baseurl: ""
+description: "Persönlichkeitsentwicklung Coach & Speaker für innere Transformation"
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - BLOG-ANLEITUNG.md
+  - VORLAGE-blogpost.md
