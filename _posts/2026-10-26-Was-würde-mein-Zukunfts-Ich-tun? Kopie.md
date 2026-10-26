@@ -3,8 +3,8 @@ layout: post
 lang: de
 title: "Was würde mein Zukunfts-Ich tun?"
 description: "Wir warten wichtige Entscheidungen häufig ab und rechtfertigen, warum aktuell nicht der richtige Zeitpunkt ist. Diese Blockade hindert uns an unserem vollen Potenzial." 
-permalink: /blog/was-wuerde-mein-zukunfts-ich-tun?/
-de_url: /blog/was-wuerde-mein-zukunfts-ich-tun?/
+permalink: /blog/was-wuerde-mein-zukunfts-ich-tun/
+de_url: /blog/was-wuerde-mein-zukunfts-ich-tun/
 en_url: /en/blog/
 alt_url: /en/blog/
 alt_label: "EN"
