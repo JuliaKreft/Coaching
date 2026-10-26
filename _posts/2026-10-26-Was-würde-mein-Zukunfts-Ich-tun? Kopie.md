@@ -24,7 +24,7 @@ Ganz einfach: großes Glück kommt meistens auch mit einem gewissen Risiko. Wie 
 Timothy Gallwey stellte folgende Gleichung auf:
 > Leistung = Potenzial - Störfaktoren
 
-Wir können also dann unsere volle Leistung abrufen, wenn unser Potenzial nicht durch Störfaktoren blockiert wird. In der Realität treffen wir aber immer wieder auf Blockaden, die uns von unseren vollen Leistung abhalten. In unserem Beispiel hält uns vor allem die Angst davor ab die wichtige Entscheidung zu treffen. 
+Wir können also dann unsere volle Leistung abrufen, wenn unser Potenzial nicht durch Störfaktoren blockiert wird. In der Realität treffen wir aber immer wieder auf Blockaden, die uns von unserer vollen Leistung abhalten. In unserem Beispiel hält uns vor allem die Angst davor ab die wichtige Entscheidung zu treffen. 
 - Die Angst vor dem Unbekannten hält uns am selben Ort, obwohl wir innerlich bereits wissen, dass wir hier nicht mehr hingehören. 
 - Die Angst vor der direkten Konsequenz hält uns im gewohnten Umfeld, obwohl wir spüren, dass wir etwas anderes wollen. 
 
@@ -38,7 +38,7 @@ Versuche dir vorzustellen, wer du in 12 Monaten bist, wenn alles gemäß deinen 
 
 ## Wie kann die Blockade nachhaltig gelöst werden?
 
-Der erste Schritt ist nicht mehr Recherche oder mehr Zeit zum nachdenken, sondern ehrliches Hinschauen. Genau da beginnt Coaching. Durch die richtigen Fragen und ehrliche Antworten werden Schritt-für-Schritt blockierende Gedanken sichtbar gemacht und erkannt. Diese Erkenntnis hilft dann, um neue Verknüpfungen zu erstellen und so die Blockaden zu lösen. 
+Der erste Schritt ist nicht mehr Recherche oder mehr Zeit zum Nachdenken, sondern ehrliches Hinschauen. Genau da beginnt Coaching. Durch die richtigen Fragen und ehrliche Antworten werden Schritt für Schritt blockierende Gedanken sichtbar gemacht und erkannt. Diese Erkenntnis hilft dann, um neue Verknüpfungen zu erstellen und so die Blockaden zu lösen. 
 
 Wir müssen uns nur trauen den ersten Schritt zu machen. 
 
