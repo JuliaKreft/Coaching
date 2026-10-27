@@ -44,6 +44,10 @@ Wir müssen uns nur trauen den ersten Schritt zu machen.
 
 > Wann fängst du an, dir selbst die erste Priorität zu sein?
 
+Wenn dich das anspricht, buche gern ein kostenloses [Klarheitsgespräch](/kontakt/).
+
 ![Bildbeschreibung](/assets/img/Julia-Kreft-90.jpg)
 
-Wenn dich das anspricht, buche gern ein kostenloses [Klarheitsgespräch](/kontakt/).
+
+
+
